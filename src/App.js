@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import './App.css';
 import Navbar from './components/presentational/navbar';
 import Search from './components/presentational/search';
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Search />
-    </div>
-  );
-}
+// const URL = 'https://app.joindrover.com/api/web/vehicles';
 
-export default App;
+export default class App extends Component {
+  state = {
+
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Search />
+      </div>
+    );
+  }
+}
 
 /** To Do
  * Check all styling
  * Use feature branches
  * Icon
  * Menu bar
+ * PropTypes
+ * Default props
  */
