@@ -1,0 +1,12 @@
+.results-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.results-title {
+  color: rgb(32, 32, 32);
+  line-height: 1.1;
+  margin: 15px 0 4px;
+}

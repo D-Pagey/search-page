@@ -1,0 +1,17 @@
+.banner {
+  background-color: #f9e5be;
+  padding: 6px;
+  text-align: center;
+}
+
+.banner-link {
+  text-decoration: none;
+}
+
+.banner-link:hover {
+  text-decoration: underline;
+}
+
+.banner-link:visited {
+  color: black;
+}
