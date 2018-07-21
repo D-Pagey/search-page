@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.css';
 
-export default function Subscription() {
+export default function SliderBlock() {
   return (
     <div className="subscription-container">
       <p className="subscription-title">Choose your subscription type:</p>
