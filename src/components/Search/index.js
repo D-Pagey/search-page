@@ -10,7 +10,7 @@ import NoVehicles from './NoVehicles';
 
 export default function Search() {
   return (
-    <main>
+    <main className="search-container">
       <Banner />
       <MainHeading />
       <SliderBlock />
