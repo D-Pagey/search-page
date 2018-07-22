@@ -8,12 +8,12 @@ two.
  
 #### 1. Basic
 
-- [ ] Setup an app that calls our API to get vehicles for one vehicle type
+- [x] Setup an app that calls our API to get vehicles for one vehicle type
 - [ ] Display vehicles in a list/table to the user with relevant data (eg: make, 
 model, year, color, price - see notes)
 - [ ] Allow at least 2 fields (location is required) in search to be user inputted 
 (submit button? automatic?)
-- [ ] *Bonus:* add some styling
+- [x] *Bonus:* add some styling
 
 #### 2. Keep going
 
@@ -41,3 +41,4 @@ model, year, color, price - see notes)
 #### Improvements
 
 - BEM CSS
+- Redux

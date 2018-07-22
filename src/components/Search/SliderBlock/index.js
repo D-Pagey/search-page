@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.css';
 
-export default function SliderBlock() {
+export default function SliderBlock({ submit }) {
   return (
     <div className="slider-block">
       <p className="subscription-title">Choose your subscription type:</p>
@@ -52,7 +52,12 @@ export default function SliderBlock() {
           </div>
         </div>
 
-        <button type="button" className="submit-btn">Submit</button>
+        <button 
+          type="button"
+          className="submit-btn"
+          onClick={submit}
+        >Submit
+        </button>
       </form>
     </div>
   );
