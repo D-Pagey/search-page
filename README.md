@@ -41,3 +41,4 @@ model, year, color, price - see notes)
 #### Improvements
 
 - BEM CSS
+- Redux
