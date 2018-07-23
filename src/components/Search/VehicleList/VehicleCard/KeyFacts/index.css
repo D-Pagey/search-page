@@ -1,0 +1,10 @@
+.key-facts {
+  border-bottom: 1px solid #e4e4e4;
+  display: flex;
+  justify-content: center;
+}
+
+.key-facts-list {
+  margin: 5px 10px 5px 0;
+  padding-left: 30px;
+}

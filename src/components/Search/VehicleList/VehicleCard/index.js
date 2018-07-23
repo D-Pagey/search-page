@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './index.css';
+import KeyFacts from './KeyFacts';
 
 export default class VehicleCard extends Component {
   getDay = (date) => {
@@ -25,8 +26,7 @@ export default class VehicleCard extends Component {
 
   render() {
     const { data } = this.props;
-    console.log(data);
-    this.getMonth(data.available_start_date);
+
     return (
       <div className="vehicle-card">
         <img
@@ -50,6 +50,7 @@ export default class VehicleCard extends Component {
             ${data.available_start_date.slice(0, 4)}`}
           </p>
         </div>
+        <KeyFacts data={data} />
       </div>
     );
   }
