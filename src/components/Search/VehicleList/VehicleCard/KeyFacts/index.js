@@ -3,8 +3,6 @@ import React from 'react';
 import './index.css';
 
 export default function KeyFacts({ data }) {
-  console.log(data);
-
   return (
     <div className="key-facts">
       <ul className="key-facts-list">

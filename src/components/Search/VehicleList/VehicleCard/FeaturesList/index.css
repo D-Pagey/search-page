@@ -1,0 +1,20 @@
+.features-container {
+  align-self: center;
+  margin-top: 3px;
+  width: 266px;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  color: #7d807c;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 5px;
+}

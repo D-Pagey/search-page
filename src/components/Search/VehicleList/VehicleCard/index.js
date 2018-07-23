@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './index.css';
 import KeyFacts from './KeyFacts';
+import FeaturesList from './FeaturesList';
 
 export default class VehicleCard extends Component {
   getDay = (date) => {
@@ -51,6 +52,7 @@ export default class VehicleCard extends Component {
           </p>
         </div>
         <KeyFacts data={data} />
+        <FeaturesList features={data.features} />
       </div>
     );
   }

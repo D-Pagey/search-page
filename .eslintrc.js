@@ -6,5 +6,8 @@ module.exports = {
         "linebreak-style": 0,
         "react/jsx-one-expression-per-line": 0,
         "jsx-a11y/label-has-for": 0,
-    }
+    },
+    "plugins": [
+        "react"
+    ]
 };
