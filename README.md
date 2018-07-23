@@ -38,7 +38,19 @@ model, year, color, price - see notes)
 - What did I learn? 
 - What did I struggle with?
 
+#### Pre-Submission To Do
+* Calculate Price
+* Pass params to fetch
+* Check all styling
+* Mobile responsive
+* User input field
+* Icon
+* PropTypes
+* Default props
+* isomorphic fetch
+
 #### Improvements
 
 - BEM CSS
 - Redux
+- Menu bar

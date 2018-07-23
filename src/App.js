@@ -14,13 +14,3 @@ export default function App() {
     </div>
   );
 }
-
-/** To Do
- * Check all styling
- * Icon
- * Menu bar
- * PropTypes
- * Default props
- * Pass params to fetch
- * isomorphic fetch
- */
