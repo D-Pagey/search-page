@@ -10,6 +10,15 @@ import Footer from './components/Footer';
 export default class App extends Component {
   state = {
     isRefineSearch: false,
+    query: {
+      location: '',
+      start: '',
+      distance: '',
+      budget: '',
+      gearbox: '',
+      year: '',
+      fuel: '',
+    }
   }
 
   toggleRefineSearch = () => {
@@ -20,13 +29,13 @@ export default class App extends Component {
 
   render() {
     const { isRefineSearch } = this.state;
-    const buttonText = isRefineSearch ? 'Refine your search' : 'Update search and hide filter';
+    const buttonText = isRefineSearch ? 'Update search and hide filter' : 'Refine your search';
 
     return (
       <div className="app">
         <Navbar />
         <Banner />
-        {isRefineSearch ? <Search /> : <Filter toggle={this.toggleRefineSearch} />}
+        {isRefineSearch ? <Filter toggle={this.toggleRefineSearch} /> : <Search />}
         <Footer />
         <div className="filter-div">
           <button
@@ -42,6 +51,5 @@ export default class App extends Component {
   }
 }
 
-// state
 // refine search here
 // json object to query string

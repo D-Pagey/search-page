@@ -19,7 +19,7 @@ export default function VehicleCard(props) {
       <VehicleSummary data={data} />
       <KeyFacts data={data} />
       <FeaturesList features={data.features} />
-      <PriceWrapper data={data} />
+      <PriceWrapper data={data} weeks={12} />
     </div>
   );
 }

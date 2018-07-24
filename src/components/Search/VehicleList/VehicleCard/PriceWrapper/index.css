@@ -12,12 +12,6 @@
   flex-direction: column;
 }
 
-.old-price {
-  color: red;
-  font-size: 13px;
-  text-decoration: line-through;
-}
-
 .new-price {
   font-size: 18px;
   font-weight: bold;

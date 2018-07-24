@@ -36,7 +36,7 @@ export default function Filter({ toggle }) {
             className="filter-input dropdown"
           >
             <option value="2">Next 2 Days</option>
-            <option value="14" selected>Next 14 Days</option>
+            <option value="14" defaultValue>Next 14 Days</option>
             <option value="30">Next 30 Days</option>
           </select>
         </div>
@@ -51,7 +51,7 @@ export default function Filter({ toggle }) {
             name="distance"
             className="filter-input dropdown"
           >
-            <option value="25" selected>25</option>
+            <option value="25" defaultValue>25</option>
             <option value="50">50</option>
             <option value="75">75</option>
             <option value="100">100</option>
@@ -71,7 +71,7 @@ export default function Filter({ toggle }) {
             name="budget"
             className="filter-input dropdown"
           >
-            <option value="400" selected>Under £200</option>
+            <option value="400" defaultValue>Under £200</option>
             <option value="500">Under £500</option>
             <option value="750">Under £750</option>
             <option value="1000">Under £1000</option>
@@ -90,7 +90,7 @@ export default function Filter({ toggle }) {
             name="gearbox"
             className="filter-input dropdown"
           >
-            <option value="any" selected>Any</option>
+            <option value="any" defaultValue>Any</option>
             <option value="automatic">Automatic</option>
             <option value="cvt">Cvt</option>
             <option value="manual">Manual</option>
@@ -107,7 +107,7 @@ export default function Filter({ toggle }) {
             name="year"
             className="filter-input dropdown"
           >
-            <option value="any" selected>Any</option>
+            <option value="any" defaultValue>Any</option>
             <option value="2018">2018</option>
             <option value="2017">2017</option>
             <option value="2016">2016</option>
@@ -128,7 +128,7 @@ export default function Filter({ toggle }) {
             name="fuel"
             className="filter-input dropdown"
           >
-            <option value="any" selected>Any</option>
+            <option value="any" defaultValue>Any</option>
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
             <option value="hybrid">Petrol Hybrid</option>
