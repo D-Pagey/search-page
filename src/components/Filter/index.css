@@ -2,19 +2,11 @@
   width: 100%;
 }
 
-.back-to-search-container {
+.back-to-search-div {
   background-color: #172B24;
   height: 52px;
   display: flex;
   align-items: center;
-}
-
-.back-btn {
-  background-color: inherit;
-  border: 0;
-  color: white;
-  font-weight: bold;
-  margin-left: 20px;
 }
 
 .chevron {
@@ -31,7 +23,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 290px;
+  padding: 0 1rem;
 }
 
 .input-group {

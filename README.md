@@ -9,7 +9,7 @@ two.
 #### 1. Basic
 
 - [x] Setup an app that calls our API to get vehicles for one vehicle type
-- [ ] Display vehicles in a list/table to the user with relevant data (eg: make, 
+- [x] Display vehicles in a list/table to the user with relevant data (eg: make, 
 model, year, color, price - see notes)
 - [ ] Allow at least 2 fields (location is required) in search to be user inputted 
 (submit button? automatic?)
@@ -19,7 +19,7 @@ model, year, color, price - see notes)
 
 - [ ] Add all fields able to search by for one vehicle type (please see live website)
 - [ ] Write unit/snapshot tests for most if not all components
-- [ ] Add styling to make it look like https://www.joindrover.com/cars/search
+- [x] Add styling to make it look like https://www.joindrover.com/cars/search
 - [ ] *Bonus:* add functionality for pagination
 
 #### 3. All out!
@@ -37,9 +37,9 @@ model, year, color, price - see notes)
 - What would I have improved with more time?
 - What did I learn? 
 - What did I struggle with?
+- Yarn start
 
 #### Pre-Submission To Do
-* Calculate Price
 * Pass params to fetch
 * Check all styling
 * Mobile responsive

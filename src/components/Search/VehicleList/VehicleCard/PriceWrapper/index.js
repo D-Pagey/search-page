@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './index.css';
+import Button from '../../../../Button';
 
 export default function PriceWrapper({ data, weeks }) {
   const price = data.price_discount_and_deposit_schedule_hash[weeks]
@@ -8,11 +9,11 @@ export default function PriceWrapper({ data, weeks }) {
 
   return (
     <div className="price-wrapper">
-      <div className="price">
-        <span><span className="new-price">£{price}</span>/month</span>
+      <div className="price-div">
+        <span><span className="price">£{price}</span>/month</span>
         <span className="price-detail">(Monthly Vehicle Price inc. VAT)</span>
       </div>
-      <button type="button" className="submit-btn">See more details</button>
+      <Button text="See more details" />
     </div>
   );
 }

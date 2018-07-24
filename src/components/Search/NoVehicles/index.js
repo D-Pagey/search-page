@@ -1,11 +1,12 @@
 import React from 'react';
 
 import './index.css';
+import Button from '../../Button';
 
 export default function NoVehicles() {
   return (
     <div className="no-vehicles-container">
-      <div className="no-vehicles-header">
+      <div>
         <h3 className="no-vehicles-title">looking for a specific car?</h3>
         <p>Let us know what car you are looking for, and we&apos;ll be in touch!</p>
       </div>
@@ -41,7 +42,7 @@ export default function NoVehicles() {
             required
             id="time-frame"
             name="time-frame"
-            className="form-input dropdown"
+            className="form-input"
             placeholder="example@gmail.com"
           >
             <option value="this-month">This Month</option>
@@ -69,13 +70,11 @@ export default function NoVehicles() {
             name="checkbox"
             className="checkbox"
           />
-          <label htmlFor="checkbox" className="updates-copy">I would like to 
+          <label htmlFor="checkbox" className="updates-copy">I would like to
           receive updates about discounts, special offers, news and events from Drover.
           </label>
         </div>
-        <button type="button" className="submit-btn no-vehicles-btn">
-          Find my car
-        </button>
+        <Button text="Find my car" />
       </form>
     </div>
   );

@@ -4,7 +4,7 @@ import './index.css';
 
 export default function Banner() {
   return (
-    <div className="banner">
+    <div className="banner-div">
       <a
         className="banner-link"
         href="http://help.joindrover.com/personal-use-drivers/arranging-delivery-for-your-vehicle"

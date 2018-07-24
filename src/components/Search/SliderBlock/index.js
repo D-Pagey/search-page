@@ -1,28 +1,37 @@
 import React from 'react';
 
 import './index.css';
+import Button from '../../Button';
 
-export default function SliderBlock({ submit }) {
+export default function SliderBlock() {
   return (
     <div className="slider-block">
       <p className="subscription-title">Choose your subscription type:</p>
       <form className="subscription-form">
         <div className="rental-options">
-          <div className="select-input-wrapper">
-            <input type="radio" name="type-of-booking" id="1" value="on" />
-            <span className="checkmark" />
-          </div>
-          <label className="label" htmlFor="1">
+          <input
+            type="radio"
+            name="type-of-booking"
+            id="1"
+            value="on"
+            className="radio"
+          />
+          <label className="subscription-label" htmlFor="1">
             Monthly Rolling Subscription (cancel or swap monthly)
           </label>
         </div>
 
         <div className="rental-options">
           <div className="select-input-wrapper">
-            <input type="radio" name="type-of-booking" id="2" value="on" />
-            <span className="checkmark" />
+            <input
+              type="radio"
+              name="type-of-booking"
+              id="2"
+              value="on"
+              className="radio"
+            />
           </div>
-          <label className="label" htmlFor="2">
+          <label className="subscription-label" htmlFor="2">
           Minimum Commitment Subscriptions (get discounts!)
           </label>
         </div>
@@ -52,12 +61,7 @@ export default function SliderBlock({ submit }) {
           </div>
         </div>
 
-        <button 
-          type="button"
-          className="submit-btn"
-          onClick={submit}
-        >Submit
-        </button>
+        <Button text="Submit" />
       </form>
     </div>
   );

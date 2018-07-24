@@ -5,7 +5,9 @@ import VehicleCard from './VehicleCard';
 
 export default function VehicleList({ results }) {
   if (results.data) {
-    const listOfVehicles = results.data.map(element => <VehicleCard data={element} />);
+    const listOfVehicles = results.data
+      .map(element => <VehicleCard data={element} key={element.id} />);
+
     return (
       <div className="vehicle-list-container">
         {listOfVehicles}

@@ -2,11 +2,8 @@
     background-color: white;
     border: 1px solid #e4e3e3;
     border-radius: 6px;
+    padding: 16px;
     width: 290px;
-}
-
-.no-vehicles-header {
-    padding: 16px 16px 0;
 }
 
 .no-vehicles-title {
@@ -26,7 +23,6 @@
 .form-group {
     display: flex;
     flex-direction: column;
-    padding: 0 16px;
     margin-bottom: 10px;
 }
 
@@ -45,10 +41,6 @@
     font-size: 1rem;
 }
 
-.dropdown {
-    background-color: white;
-}
-
 .row {
     flex-direction: row;
 }
@@ -60,14 +52,4 @@
 
 .updates-copy {
     padding-left: 20px;
-}
-
-.no-vehicles-btn {
-    align-self: center;
-    font-size: 100%;
-    font-weight: bold;
-    height: 40px;
-    line-height: inherit;
-    padding: 5px 15px;
-    width: 256px;
 }

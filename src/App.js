@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
+import Button from './components/Button';
 import Search from './components/Search';
 import Filter from './components/Filter';
 import Footer from './components/Footer';
@@ -18,7 +19,7 @@ export default class App extends Component {
       gearbox: '',
       year: '',
       fuel: '',
-    }
+    },
   }
 
   toggleRefineSearch = () => {
@@ -37,14 +38,8 @@ export default class App extends Component {
         <Banner />
         {isRefineSearch ? <Filter toggle={this.toggleRefineSearch} /> : <Search />}
         <Footer />
-        <div className="filter-div">
-          <button
-            type="button"
-            className="filter-btn submit-btn"
-            onClick={this.toggleRefineSearch}
-          >
-            {buttonText}
-          </button>
+        <div className="refine-search-div">
+          <Button text={buttonText} onClick={this.toggleRefineSearch} />
         </div>
       </div>
     );

@@ -1,10 +1,11 @@
 .price-wrapper {
   align-self: center;
   margin-top: 3px;
-  width: 266px;
+  padding: 0 10px;
+  width: 100%;
 }
 
-.price {
+.price-div {
   background-color: #bef9f9;
   border-radius: 6px;
   display: flex;
@@ -12,7 +13,7 @@
   flex-direction: column;
 }
 
-.new-price {
+.price {
   font-size: 18px;
   font-weight: bold;
   display: inline-block;
