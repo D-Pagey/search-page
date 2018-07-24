@@ -61,7 +61,7 @@ export default function SliderBlock() {
           </div>
         </div>
 
-        <Button text="Submit" />
+        <Button>Submit</Button>
       </form>
     </div>
   );

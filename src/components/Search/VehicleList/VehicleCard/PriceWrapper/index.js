@@ -13,7 +13,7 @@ export default function PriceWrapper({ data, weeks }) {
         <span><span className="price">£{price}</span>/month</span>
         <span className="price-detail">(Monthly Vehicle Price inc. VAT)</span>
       </div>
-      <Button text="See more details" />
+      <Button>See more details</Button>
     </div>
   );
 }

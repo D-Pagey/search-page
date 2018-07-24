@@ -12,12 +12,10 @@ function Feature({ feature }) {
 }
 
 export default function FeaturesList({ features }) {
-  const listOfFeatures = features.map(element => <Feature feature={element} />);
-
   return (
     <div className="features-container">
       <ul className="features-list">
-        {listOfFeatures}
+        {features.map(element => <Feature feature={element} />)}
       </ul>
     </div>
   );

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="banner-div"
+>
+  <a
+    className="banner-link"
+    href="http://help.joindrover.com/personal-use-drivers/arranging-delivery-for-your-vehicle"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    FREE DELIVERY WITHIN 50 MILES
+  </a>
+</div>
+`;

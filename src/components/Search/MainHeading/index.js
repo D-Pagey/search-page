@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.css';
 
-export default function MainHeading({ count = { total_count: ''} }) {
+export default function MainHeading({ count = { total_count: '' } }) {
   return (
     <div className="main-heading-container">
       <h2 className="main-heading">

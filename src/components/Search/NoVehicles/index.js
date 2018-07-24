@@ -74,7 +74,7 @@ export default function NoVehicles() {
           receive updates about discounts, special offers, news and events from Drover.
           </label>
         </div>
-        <Button text="Find my car" />
+        <Button>Find my car</Button>
       </form>
     </div>
   );

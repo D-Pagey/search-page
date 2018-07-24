@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import './App.css';
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import Button from './components/Button';
-import Search from './components/Search';
-import Filter from './components/Filter';
-import Footer from './components/Footer';
+import './index.css';
+import Navbar from '../Navbar';
+import Banner from '../Banner';
+import Button from '../Button';
+import Search from '../Search';
+import Filter from '../Filter';
+import Footer from '../Footer';
 
 export default class App extends Component {
   state = {
@@ -39,7 +39,7 @@ export default class App extends Component {
         {isRefineSearch ? <Filter toggle={this.toggleRefineSearch} /> : <Search />}
         <Footer />
         <div className="refine-search-div">
-          <Button text={buttonText} onClick={this.toggleRefineSearch} />
+          <Button onClick={this.toggleRefineSearch}>{buttonText}</Button>
         </div>
       </div>
     );
