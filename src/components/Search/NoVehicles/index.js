@@ -69,8 +69,8 @@ export default function NoVehicles() {
             name="checkbox"
             className="checkbox"
           />
-          <label htmlFor="checkbox" className="updates-copy">I would like to receive updates
-          about discounts, special offers, news and events from Drover.
+          <label htmlFor="checkbox" className="updates-copy">I would like to 
+          receive updates about discounts, special offers, news and events from Drover.
           </label>
         </div>
         <button type="button" className="submit-btn no-vehicles-btn">

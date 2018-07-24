@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import './index.css';
-import Banner from './Banner';
 import MainHeading from './MainHeading';
 import SliderBlock from './SliderBlock';
 import VehicleList from './VehicleList';
@@ -37,7 +36,6 @@ export default class Search extends Component {
 
     return (
       <main className="search-container">
-        <Banner />
         <MainHeading count={results.metadata} />
         <SliderBlock submit={this.fetchData} />
         <VehicleList results={results} />
@@ -47,3 +45,9 @@ export default class Search extends Component {
     );
   }
 }
+
+// search query in state, empty object
+// updates keys in object
+// key prop in array
+// component button
+// in state have isRefineSearch showing ? <User Inputs /> : <Search />

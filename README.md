@@ -47,10 +47,15 @@ model, year, color, price - see notes)
 * Icon
 * PropTypes
 * Default props
+* Unit/snapshot tests
 * isomorphic fetch
+* check props are necessary
+* loading state
 
 #### Improvements
 
 - BEM CSS
 - Redux
 - Menu bar
+- Vehicle Make in filter
+- Compenentise more with buttons and CSS
