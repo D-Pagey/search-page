@@ -32,30 +32,22 @@ model, year, color, price - see notes)
 
 ---- 
 
-## Notes
+**Getting Started:**
+ 1. Run: `yarn`
+ 2. Run: `yarn start`
+ 3. Go to: `http://localhost:3000/`
 
-- What would I have improved with more time?
-- What did I learn? 
-- What did I struggle with?
-- Yarn start
+---- 
 
-#### Pre-Submission To Do
-* Pass params to fetch
-* Check all styling
-* Mobile responsive
-* User input field
-* Icon
-* PropTypes
-* Default props
-* Unit/snapshot tests
-* isomorphic fetch
-* check props are necessary
-* loading state
+#### Notes
 
-#### Improvements
+I plan to continue working on this task to as close to an **All out!** standard 
+as possible. I've built a version that displays live data for a generic request. 
+I decided to go with a mobile first design and so have only built the app for 
+320px so far. With more time I would like to implement the following:
 
-- BEM CSS
-- Redux
-- Menu bar
-- Vehicle Make in filter
-- Compenentise more with buttons and CSS
+* Redux
+* BEM CSS
+* More unit tests
+* The cool menu in the navbar
+* The various "To Do" comments in the code

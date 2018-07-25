@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { objectOf, any } from 'prop-types';
 
 import './index.css';
 
 export default class VehicleSummary extends Component {
+  static propTypes = {
+    data: objectOf(any).isRequired,
+  }
+
   getDay = (date) => {
     const day = date.slice(8);
 

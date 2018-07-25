@@ -1,8 +1,9 @@
 import React from 'react';
+import { shape, number } from 'prop-types';
 
 import './index.css';
 
-export default function MainHeading({ count = { total_count: '' } }) {
+export default function MainHeading({ count }) {
   return (
     <div className="main-heading-container">
       <h2 className="main-heading">
@@ -11,3 +12,13 @@ export default function MainHeading({ count = { total_count: '' } }) {
     </div>
   );
 }
+
+MainHeading.propTypes = {
+  count: shape({
+    total_count: number,
+  }),
+};
+
+MainHeading.defaultProps = {
+  count: { total_count: 0 },
+};

@@ -9,6 +9,8 @@ import NoVehicles from './NoVehicles';
 
 const URL = 'https://app.joindrover.com/api/web/vehicles?vehicle_type=Consumer';
 
+// I'll pass down user params to Search as props
+
 export default class Search extends Component {
   state = {
     results: [],
@@ -19,6 +21,7 @@ export default class Search extends Component {
   }
 
   fetchData = () => {
+    // To Do: swap out native fetch for isomorphic or Axios
     fetch(URL, {
       method: 'POST',
       headers: {
@@ -45,9 +48,3 @@ export default class Search extends Component {
     );
   }
 }
-
-// search query in state, empty object
-// updates keys in object
-// key prop in array
-// component button
-// in state have isRefineSearch showing ? <User Inputs /> : <Search />

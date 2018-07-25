@@ -1,4 +1,5 @@
 import React from 'react';
+import { objectOf, any } from 'prop-types';
 
 import './index.css';
 
@@ -22,3 +23,7 @@ export default function KeyFacts({ data }) {
     </div>
   );
 }
+
+KeyFacts.propTypes = {
+  data: objectOf(any).isRequired,
+};

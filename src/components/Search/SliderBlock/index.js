@@ -3,6 +3,8 @@ import React from 'react';
 import './index.css';
 import Button from '../../Button';
 
+// To Do: Make this from functional, changing fetch request
+
 export default function SliderBlock() {
   return (
     <div className="slider-block">

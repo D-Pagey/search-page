@@ -11,7 +11,9 @@ import Footer from '../Footer';
 export default class App extends Component {
   state = {
     isRefineSearch: false,
-    query: {
+    // This is the start of taking users params into fetch request
+    // I'll convert the json object to a query string
+    query: { 
       location: '',
       start: '',
       distance: '',
@@ -45,6 +47,3 @@ export default class App extends Component {
     );
   }
 }
-
-// refine search here
-// json object to query string

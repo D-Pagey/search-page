@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, func } from 'prop-types';
 
 import './index.css';
 
@@ -9,3 +10,13 @@ export default function Button({ children, onClick = undefined }) {
     </div>
   );
 }
+
+Button.propTypes = {
+  children: string,
+  onClick: func,
+};
+
+Button.defaultProps = {
+  children: '',
+  onClick: null,
+};

@@ -1,6 +1,9 @@
 import React from 'react';
+import { func } from 'prop-types';
 
 import './index.css';
+
+// To Do: take user's input above into state to append to fetch url
 
 export default function Filter({ toggle }) {
   return (
@@ -138,3 +141,7 @@ export default function Filter({ toggle }) {
     </div>
   );
 }
+
+Filter.propTypes = {
+  toggle: func.isRequired,
+};

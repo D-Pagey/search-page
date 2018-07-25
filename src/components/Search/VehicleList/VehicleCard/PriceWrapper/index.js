@@ -1,4 +1,5 @@
 import React from 'react';
+import { objectOf, any, number } from 'prop-types';
 
 import './index.css';
 import Button from '../../../../Button';
@@ -17,3 +18,8 @@ export default function PriceWrapper({ data, weeks }) {
     </div>
   );
 }
+
+PriceWrapper.propTypes = {
+  data: objectOf(any).isRequired,
+  weeks: number.isRequired,
+};
