@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { objectOf, any } from 'prop-types';
 
 import './index.css';
 import MainHeading from './MainHeading';
@@ -7,11 +8,15 @@ import VehicleList from './VehicleList';
 import Pagination from './Pagination';
 import NoVehicles from './NoVehicles';
 
-const URL = 'https://app.joindrover.com/api/web/vehicles?vehicle_type=Consumer';
+const URL = 'https://app.joindrover.com/api/web/vehicles';
 
 // I'll pass down user params to Search as props
 
 export default class Search extends Component {
+  static propTypes = {
+    userParams: objectOf(any).isRequired,
+  }
+
   state = {
     results: [],
   }
@@ -21,9 +26,12 @@ export default class Search extends Component {
   }
 
   fetchData = () => {
+    const { userParams } = this.props;
+    console.log(userParams);
     // To Do: swap out native fetch for isomorphic or Axios
     fetch(URL, {
       method: 'POST',
+      body: JSON.stringify(userParams),
       headers: {
         'content-type': 'application/json',
       },

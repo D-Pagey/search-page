@@ -5,7 +5,7 @@ import './index.css';
 
 // To Do: take user's input above into state to append to fetch url
 
-export default function Filter({ toggle }) {
+export default function Filter({ toggle, handleChange, defaultValue }) {
   return (
     <div className="filter-container">
       <div className="back-to-search-div">
@@ -25,21 +25,25 @@ export default function Filter({ toggle }) {
             name="location"
             className="filter-input"
             placeholder="Enter your location"
+            onChange={handleChange}
+            value={defaultValue.location}
           />
         </div>
 
         <div className="input-group">
-          <label htmlFor="sub-start" className="filter-label">
+          <label htmlFor="start" className="filter-label">
             Subscription starts within the
           </label>
           <select
             type="text"
-            id="sub-start"
-            name="sub-start"
+            id="start"
+            name="subscription_start_days"
             className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.start}
           >
             <option value="2">Next 2 Days</option>
-            <option value="14" defaultValue>Next 14 Days</option>
+            <option value="14">Next 14 Days</option>
             <option value="30">Next 30 Days</option>
           </select>
         </div>
@@ -51,10 +55,12 @@ export default function Filter({ toggle }) {
           <select
             type="text"
             id="distance"
-            name="distance"
+            name="max_distance"
             className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.max_distance}
           >
-            <option value="25" defaultValue>25</option>
+            <option value="25">25</option>
             <option value="50">50</option>
             <option value="75">75</option>
             <option value="100">100</option>
@@ -71,10 +77,12 @@ export default function Filter({ toggle }) {
           <select
             type="text"
             id="budget"
-            name="budget"
+            name="price_max"
             className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.price_max}
           >
-            <option value="400" defaultValue>Under £200</option>
+            <option value="200">Under £200</option>
             <option value="500">Under £500</option>
             <option value="750">Under £750</option>
             <option value="1000">Under £1000</option>
@@ -90,10 +98,12 @@ export default function Filter({ toggle }) {
           <select
             type="text"
             id="gearbox"
-            name="gearbox"
+            name="transmission"
             className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.transmission}
           >
-            <option value="any" defaultValue>Any</option>
+            <option value="any">Any</option>
             <option value="automatic">Automatic</option>
             <option value="cvt">Cvt</option>
             <option value="manual">Manual</option>
@@ -109,8 +119,10 @@ export default function Filter({ toggle }) {
             id="year"
             name="year"
             className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.year}
           >
-            <option value="any" defaultValue>Any</option>
+            <option value="any">Any</option>
             <option value="2018">2018</option>
             <option value="2017">2017</option>
             <option value="2016">2016</option>
@@ -130,8 +142,10 @@ export default function Filter({ toggle }) {
             id="fuel"
             name="fuel"
             className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.fuel}
           >
-            <option value="any" defaultValue>Any</option>
+            <option value="any">Any</option>
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
             <option value="hybrid">Petrol Hybrid</option>
@@ -144,4 +158,7 @@ export default function Filter({ toggle }) {
 
 Filter.propTypes = {
   toggle: func.isRequired,
+  handleChange: func.isRequired,
+  defaultValues: objectOf(any).isRequired,
 };
+
