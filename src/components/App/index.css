@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto 40px;
-  width: 320px;
 }
 
 .refine-search-div {
@@ -14,5 +13,5 @@
   justify-content: center;
   padding: 11px;
   position: fixed;
-  width: 320px;
+  width: 100%;
 }

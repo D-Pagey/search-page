@@ -9,15 +9,21 @@ import {
 import './index.css';
 import VehicleCard from './VehicleCard';
 
-export default function VehicleList({ results }) {
+export default function VehicleList({ results, userParams }) {
   let content;
 
   if (results.data) {
     if (results.data.length) {
       content = results.data
-        .map(element => <VehicleCard data={element} key={element.id} />);
+        .map(element => (<VehicleCard
+          data={element}
+          key={element.id}
+          price={userParams}
+        />
+        ));
     } else {
-      content = 'No results';
+      content = `Unfortunately there are no results for this specific search. 
+      Please try and broaden the filers to see potential options.`;
     }
   } else {
     content = 'Loading data...';
@@ -35,4 +41,5 @@ VehicleList.propTypes = {
     metadata: objectOf(any),
     data: arrayOf(any),
   }).isRequired,
+  userParams: objectOf(any).isRequired,
 };

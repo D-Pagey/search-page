@@ -4,8 +4,8 @@ import { objectOf, any, number } from 'prop-types';
 import './index.css';
 import Button from '../../../../Button';
 
-export default function PriceWrapper({ data, weeks }) {
-  const price = data.price_discount_and_deposit_schedule_hash[weeks]
+export default function PriceWrapper({ data, months }) {
+  const price = data.price_discount_and_deposit_schedule_hash[months]
     .driver_price_pounds_after_discount_including_insurance;
 
   return (
@@ -21,5 +21,5 @@ export default function PriceWrapper({ data, weeks }) {
 
 PriceWrapper.propTypes = {
   data: objectOf(any).isRequired,
-  weeks: number.isRequired,
+  months: number.isRequired,
 };

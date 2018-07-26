@@ -6,7 +6,6 @@ import Banner from '../Banner';
 import Button from '../Button';
 import Search from '../Search';
 import Filter from '../Filter';
-import Footer from '../Footer';
 
 export default class App extends Component {
   state = {
@@ -23,6 +22,10 @@ export default class App extends Component {
       fuel: undefined,
       sub_type: undefined,
       body_type: undefined,
+      rental_option: 'commitment',
+      number_of_weeks: 12,
+      number_of_months: 12,
+      number_of_seats_min: undefined,
       page: 1,
     },
   }
@@ -61,8 +64,7 @@ export default class App extends Component {
               defaultValue={query}
             />
           )
-          : <Search userParams={query} />}
-        <Footer />
+          : <Search userParams={query} handleChange={this.handleChange} />}
         <div className="refine-search-div">
           <Button onClick={this.toggleRefineSearch}>{buttonText}</Button>
         </div>

@@ -1,11 +1,12 @@
 import React from 'react';
+import { func, objectOf, any } from 'prop-types';
 
 import './index.css';
 import Button from '../../Button';
 
-// To Do: Make this from functional, changing fetch request
+// To Do: Make this form functional, changing fetch request
 
-export default function SliderBlock() {
+export default function SliderBlock({ handleChange, userParams, submit }) {
   return (
     <div className="slider-block">
       <p className="subscription-title">Choose your subscription type:</p>
@@ -13,10 +14,12 @@ export default function SliderBlock() {
         <div className="rental-options">
           <input
             type="radio"
-            name="type-of-booking"
+            name="rental_option"
             id="1"
-            value="on"
+            value="monthly"
             className="radio"
+            onClick={handleChange}
+            defaultChecked={userParams.rental_option === 'monthly'}
           />
           <label className="subscription-label" htmlFor="1">
             Monthly Rolling Subscription (cancel or swap monthly)
@@ -27,10 +30,12 @@ export default function SliderBlock() {
           <div className="select-input-wrapper">
             <input
               type="radio"
-              name="type-of-booking"
+              name="rental_option"
               id="2"
-              value="on"
+              value="commitment"
               className="radio"
+              onClick={handleChange}
+              defaultChecked={userParams.rental_option === 'commitment'}
             />
           </div>
           <label className="subscription-label" htmlFor="2">
@@ -46,7 +51,13 @@ export default function SliderBlock() {
             Subscription Duration
           </label>
           <div className="length">
-            <select id="duration" className="months">
+            <select
+              id="duration"
+              className="months"
+              defaultValue={userParams.number_of_months}
+              name="number_of_months"
+              onChange={handleChange}
+            >
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -63,8 +74,14 @@ export default function SliderBlock() {
           </div>
         </div>
 
-        <Button>Submit</Button>
+        <Button onClick={() => submit}>Submit</Button>
       </form>
     </div>
   );
 }
+
+SliderBlock.propTypes = {
+  handleChange: func.isRequired,
+  userParams: objectOf(any).isRequired,
+  submit: func.isRequired,
+};

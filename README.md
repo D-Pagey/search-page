@@ -26,7 +26,7 @@ model, year, color, price - see notes)
 
 - [ ] Search can search for both types of vehicles (Consumer & Private-Hire aka PCO)
 - [ ] Unless already done, Pagination!!
-- [ ] Styling as close to original as possible
+- [x] Styling as close to original as possible
 - [ ] Fully responsive
 - [ ] *Bonus:* add google autocomplete to the location in the search filters
 
@@ -51,10 +51,3 @@ I decided to go with a mobile first design and so have only built the app for
 * More unit tests
 * The cool menu in the navbar
 * The various "To Do" comments in the code
-
-#### To Do
-1. Subscription duration => price
-2. Minimum commitment => default checked
-3. Pagination
-4. Unit tests
-5. Responsive styling

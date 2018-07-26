@@ -66,7 +66,7 @@ export default function Filter({ toggle, handleChange, defaultValue }) {
             <option value="100">100</option>
             <option value="150">150</option>
             <option value="200">200</option>
-            <option value="all">Nationwide</option>
+            <option value="9999">Nationwide</option>
           </select>
         </div>
 
@@ -107,6 +107,29 @@ export default function Filter({ toggle, handleChange, defaultValue }) {
             <option value="automatic">Automatic</option>
             <option value="cvt">Cvt</option>
             <option value="manual">Manual</option>
+          </select>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="seats" className="filter-label">
+            Minimum number of seats
+          </label>
+          <select
+            type="text"
+            id="seats"
+            name="number_of_seats_min"
+            className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.number_of_seats_min}
+          >
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
           </select>
         </div>
 

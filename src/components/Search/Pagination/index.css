@@ -1,0 +1,41 @@
+.pagination-container {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 1rem;
+  width: 290px;
+}
+
+.pagination-results {
+  margin: 0;
+}
+
+.pagination-btn-container {
+  height: 40px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.page-list {
+  display: flex;
+  height: inherit;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-item {
+  display: flex;
+}
+
+.page-btn {
+  background-color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.active {
+  background-color: #50ff7d;
+}

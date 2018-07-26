@@ -1,5 +1,5 @@
 import React from 'react';
-import { objectOf, any } from 'prop-types';
+import { objectOf, any, number } from 'prop-types';
 
 import './index.css';
 import KeyFacts from './KeyFacts';
@@ -9,7 +9,7 @@ import VehicleSummary from './VehicleSummary';
 
 // To Do: I could reduce the amount of data passed down as props
 
-export default function VehicleCard({ data }) {
+export default function VehicleCard({ data, months }) {
   return (
     <div className="vehicle-card">
       <img
@@ -20,11 +20,16 @@ export default function VehicleCard({ data }) {
       <VehicleSummary data={data} />
       <KeyFacts data={data} />
       <FeaturesList features={data.features} id={data.id} />
-      <PriceWrapper data={data} weeks={12} />
+      <PriceWrapper data={data} months={months} />
     </div>
   );
 }
 
 VehicleCard.propTypes = {
   data: objectOf(any).isRequired,
+  months: number,
+};
+
+VehicleCard.defaultProps = {
+  months: 12,
 };

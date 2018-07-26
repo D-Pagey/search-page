@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { objectOf, any } from 'prop-types';
+import { objectOf, any, func } from 'prop-types';
 
 import './index.css';
 import MainHeading from './MainHeading';
@@ -12,6 +12,7 @@ const URL = 'https://app.joindrover.com/api/web/vehicles';
 
 export default class Search extends Component {
   static propTypes = {
+    handleChange: func.isRequired,
     userParams: objectOf(any).isRequired,
   }
 
@@ -41,13 +42,22 @@ export default class Search extends Component {
 
   render() {
     const { results } = this.state;
+    const { handleChange, userParams } = this.props;
 
     return (
       <main className="search-container">
         <MainHeading count={results.metadata} />
-        <SliderBlock submit={this.fetchData} />
-        <VehicleList results={results} />
-        <Pagination />
+        <SliderBlock
+          submit={this.fetchData}
+          handleChange={handleChange}
+          userParams={userParams}
+        />
+        <VehicleList results={results} userParams={userParams} />
+        <Pagination
+          handleChange={handleChange}
+          userParams={userParams}
+          totalCount={results.metadata}
+        />
         <NoVehicles />
       </main>
     );
