@@ -10,8 +10,6 @@ import NoVehicles from './NoVehicles';
 
 const URL = 'https://app.joindrover.com/api/web/vehicles';
 
-// I'll pass down user params to Search as props
-
 export default class Search extends Component {
   static propTypes = {
     userParams: objectOf(any).isRequired,
@@ -27,7 +25,7 @@ export default class Search extends Component {
 
   fetchData = () => {
     const { userParams } = this.props;
-    // To Do: swap out native fetch for isomorphic or Axios
+    // eslint-disable-next-line no-undef
     fetch(URL, {
       method: 'POST',
       body: JSON.stringify(userParams),

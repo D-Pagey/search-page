@@ -6,6 +6,7 @@ exports[`should render 1`] = `
 >
   <button
     className="button"
+    onClick={null}
     type="button"
   >
     Test

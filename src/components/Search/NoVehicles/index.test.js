@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Search from '.';
+import NoVehicles from '.';
 
 it('should render', () => {
-  const wrapper = shallow(<Search />);
+  const wrapper = shallow(<NoVehicles />);
   expect(wrapper).toMatchSnapshot();
 });

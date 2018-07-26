@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="no-vehicles-container"
+>
+  <div>
+    <h3
+      className="no-vehicles-title"
+    >
+      looking for a specific car?
+    </h3>
+    <p>
+      Let us know what car you are looking for, and we'll be in touch!
+    </p>
+  </div>
+  <form
+    className="no-vehicles-form"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="no-vehicles-label"
+        htmlFor="fullname"
+      >
+        Full Name
+      </label>
+      <input
+        className="form-input"
+        id="fullname"
+        name="fullname"
+        placeholder="John Doe"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="no-vehicles-label"
+        htmlFor="email"
+      >
+        Email address
+      </label>
+      <input
+        className="form-input"
+        id="email"
+        name="email"
+        placeholder="example@gmail.com"
+        required={true}
+        type="email"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="no-vehicles-label"
+        htmlFor="time-frame"
+      >
+        When do you want a car?
+      </label>
+      <select
+        className="form-input"
+        id="time-frame"
+        name="time-frame"
+        placeholder="example@gmail.com"
+        required={true}
+        type="text"
+      >
+        <option
+          value="this-month"
+        >
+          This Month
+        </option>
+        <option
+          value="3-months"
+        >
+          Within 3 Months
+        </option>
+        <option
+          value="6-months"
+        >
+          Within 6 Months
+        </option>
+        <option
+          value="more-6-months"
+        >
+          6 Months +
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="no-vehicles-label"
+        htmlFor="notes"
+      >
+        What are you looking for?
+      </label>
+      <input
+        className="form-input"
+        id="notes"
+        name="notes"
+        placeholder="A White BMW M3"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group row"
+    >
+      <input
+        className="checkbox"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+      />
+      <label
+        className="updates-copy"
+        htmlFor="checkbox"
+      >
+        I would like to receive updates about discounts, special offers, news and events from Drover.
+      </label>
+    </div>
+    <Button
+      onClick={null}
+    >
+      Find my car
+    </Button>
+  </form>
+</div>
+`;
