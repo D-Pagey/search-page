@@ -1,5 +1,5 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { func, objectOf, any } from 'prop-types';
 
 import './index.css';
 
@@ -40,7 +40,7 @@ export default function Filter({ toggle, handleChange, defaultValue }) {
             name="subscription_start_days"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.start}
+            defaultValue={defaultValue.subscription_start_days}
           >
             <option value="2">Next 2 Days</option>
             <option value="14">Next 14 Days</option>
@@ -159,6 +159,5 @@ export default function Filter({ toggle, handleChange, defaultValue }) {
 Filter.propTypes = {
   toggle: func.isRequired,
   handleChange: func.isRequired,
-  defaultValues: objectOf(any).isRequired,
+  defaultValue: objectOf(any).isRequired,
 };
-

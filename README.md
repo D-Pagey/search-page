@@ -11,7 +11,7 @@ two.
 - [x] Setup an app that calls our API to get vehicles for one vehicle type
 - [x] Display vehicles in a list/table to the user with relevant data (eg: make, 
 model, year, color, price - see notes)
-- [ ] Allow at least 2 fields (location is required) in search to be user inputted 
+- [x] Allow at least 2 fields (location is required) in search to be user inputted 
 (submit button? automatic?)
 - [x] *Bonus:* add some styling
 
@@ -51,3 +51,10 @@ I decided to go with a mobile first design and so have only built the app for
 * More unit tests
 * The cool menu in the navbar
 * The various "To Do" comments in the code
+
+#### To Do
+1. Subscription duration => price
+2. Minimum commitment => default checked
+3. Pagination
+4. Unit tests
+5. Responsive styling

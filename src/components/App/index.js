@@ -11,21 +11,19 @@ import Footer from '../Footer';
 export default class App extends Component {
   state = {
     isRefineSearch: false,
-    // This is the start of taking users params into fetch request
-    // I'll convert the json object to a query string
-    // Fix filter defaultValues
     query: {
       vehicle_type: 'Consumer',
       location: '',
-      subscription_start_days: undefined,
-      max_distance: undefined,
-      price_max: undefined,
+      subscription_start_days: 14,
+      max_distance: 50,
+      price_max: 500,
       vehicle_make: undefined,
       transmission: undefined,
       year: undefined,
       fuel: undefined,
       sub_type: undefined,
       body_type: undefined,
+      page: 1,
     },
   }
 
@@ -37,11 +35,12 @@ export default class App extends Component {
 
   handleChange = (event) => {
     const { query } = this.state;
+    const { name, value } = event.target;
 
     this.setState({
       query: {
         ...query,
-        [event.target.name]: event.target.value,
+        [name]: parseInt(value, 10) || value,
       },
     });
   }

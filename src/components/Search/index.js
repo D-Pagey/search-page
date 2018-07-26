@@ -18,7 +18,7 @@ export default class Search extends Component {
   }
 
   state = {
-    results: [],
+    results: {},
   }
 
   componentDidMount() {
@@ -27,7 +27,6 @@ export default class Search extends Component {
 
   fetchData = () => {
     const { userParams } = this.props;
-    console.log(userParams);
     // To Do: swap out native fetch for isomorphic or Axios
     fetch(URL, {
       method: 'POST',
