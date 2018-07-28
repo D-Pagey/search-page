@@ -35,7 +35,7 @@ export default class VehicleSummary extends Component {
       <div className="vehicle-summary">
         <div className="vehicle-details">
           <h3 className="vehicle-make">
-            {`${data.vehicle_make} ${data.vehicle_model.toLowerCase()} 
+            {`${data.vehicle_make} ${data.vehicle_model} 
             ${data.engine_size_information}`}
           </h3>
           <p className="vehicle-location">

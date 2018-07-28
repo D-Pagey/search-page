@@ -3,7 +3,12 @@ import { func, objectOf, any } from 'prop-types';
 
 import './index.css';
 
-export default function Pagination({ handleChange, userParams, totalCount }) {
+export default function Pagination({
+  handleChange,
+  userParams,
+  totalCount,
+  fetchData,
+}) {
   const { page } = userParams;
 
   return (
@@ -20,7 +25,9 @@ export default function Pagination({ handleChange, userParams, totalCount }) {
               className={`page-btn ${userParams.page === 1 ? 'active' : null}`}
               name="page"
               value="1"
-              onClick={handleChange}
+              onClick={(event) => {
+                handleChange(event, () => fetchData());
+              }}
             >
             1
             </button>
@@ -31,7 +38,9 @@ export default function Pagination({ handleChange, userParams, totalCount }) {
               className={`page-btn ${userParams.page === 2 ? 'active' : null}`}
               name="page"
               value="2"
-              onClick={handleChange}
+              onClick={(event) => {
+                handleChange(event, () => fetchData());
+              }}
             >
             2
             </button>
@@ -42,7 +51,9 @@ export default function Pagination({ handleChange, userParams, totalCount }) {
               className={`page-btn ${userParams.page === 3 ? 'active' : null}`}
               name="page"
               value="3"
-              onClick={handleChange}
+              onClick={(event) => {
+                handleChange(event, () => fetchData());
+              }}
             >
             3
             </button>
@@ -53,7 +64,9 @@ export default function Pagination({ handleChange, userParams, totalCount }) {
               className={`page-btn ${userParams.page === 4 ? 'active' : null}`}
               name="page"
               value="4"
-              onClick={handleChange}
+              onClick={(event) => {
+                handleChange(event, () => fetchData());
+              }}
             >
             4
             </button>
@@ -64,7 +77,9 @@ export default function Pagination({ handleChange, userParams, totalCount }) {
               className={`page-btn ${userParams.page === 5 ? 'active' : null}`}
               name="page"
               value="5"
-              onClick={handleChange}
+              onClick={(event) => {
+                handleChange(event, () => fetchData());
+              }}
             >
             5
             </button>
@@ -79,6 +94,7 @@ Pagination.propTypes = {
   handleChange: func.isRequired,
   userParams: objectOf(any).isRequired,
   totalCount: objectOf(any),
+  fetchData: func.isRequired,
 };
 
 Pagination.defaultProps = {

@@ -15,3 +15,13 @@
   position: fixed;
   width: 100%;
 }
+
+.hide {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hide {
+    display: block;
+  }
+}

@@ -7,14 +7,17 @@ import Button from '../Button';
 import Search from '../Search';
 import Filter from '../Filter';
 
+const URL = 'https://app.joindrover.com/api/web/vehicles';
+
 export default class App extends Component {
   state = {
     isRefineSearch: false,
+    results: {},
     query: {
       vehicle_type: 'Consumer',
       location: '',
       subscription_start_days: 14,
-      max_distance: 50,
+      max_distance: 25,
       price_max: 500,
       vehicle_make: undefined,
       transmission: undefined,
@@ -30,13 +33,41 @@ export default class App extends Component {
     },
   }
 
-  toggleRefineSearch = () => {
-    const { isRefineSearch } = this.state;
+  componentDidMount = () => {
+    const { query } = this.state;
 
-    this.setState({ isRefineSearch: !isRefineSearch });
+    this.fetchData(query);
   }
 
-  handleChange = (event) => {
+  toggleRefineSearch = () => {
+    const { query, isRefineSearch } = this.state;
+
+    if (isRefineSearch) {
+      this.fetchData(query);
+    }
+
+    this.setState(prevState => ({
+      isRefineSearch: !prevState.isRefineSearch,
+    }));
+  }
+
+  fetchData = () => {
+    const { query } = this.state;
+    // eslint-disable-next-line no-undef
+    fetch(URL, {
+      method: 'POST',
+      body: JSON.stringify(query),
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then(data => this.setState({
+        results: data,
+      }));
+  }
+
+  handleChange = (event, callback) => {
     const { query } = this.state;
     const { name, value } = event.target;
 
@@ -45,26 +76,32 @@ export default class App extends Component {
         ...query,
         [name]: parseInt(value, 10) || value,
       },
-    });
+    }, callback);
   }
 
   render() {
-    const { isRefineSearch, query } = this.state;
-    const buttonText = isRefineSearch ? 'Update search and hide filter' : 'Refine your search';
+    const { isRefineSearch, query, results } = this.state;
+    const buttonText = isRefineSearch ? 'Update search and hide filter'
+      : 'Refine your search';
 
     return (
       <div className="app">
         <Navbar />
         <Banner />
-        {isRefineSearch
-          ? (
-            <Filter
-              toggle={this.toggleRefineSearch}
-              handleChange={this.handleChange}
-              defaultValue={query}
-            />
-          )
-          : <Search userParams={query} handleChange={this.handleChange} />}
+        <Filter
+          toggle={this.toggleRefineSearch}
+          handleChange={this.handleChange}
+          defaultValue={query}
+          className={isRefineSearch ? 'filter-container' : 'hide'}
+        />
+        <Search
+          results={results}
+          userParams={query}
+          handleChange={this.handleChange}
+          fetchData={this.fetchData}
+          metadata={results.metadata}
+          className={isRefineSearch ? 'hide' : 'search-container'}
+        />
         <div className="refine-search-div">
           <Button onClick={this.toggleRefineSearch}>{buttonText}</Button>
         </div>
@@ -72,3 +109,13 @@ export default class App extends Component {
     );
   }
 }
+
+/**
+ * Render both. Hide/show classes.
+ * <div className=`filter ${isRefineSearch ? 'show' : 'hide'}`>
+ *  <Filter className="filter"/>
+ * </div>
+ * <div className={isRefineSearch ? 'hide' : 'show'}>
+ *  <Search className="search"/>
+ * </div>
+ */

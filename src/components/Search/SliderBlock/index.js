@@ -6,7 +6,7 @@ import Button from '../../Button';
 
 // To Do: Make this form functional, changing fetch request
 
-export default function SliderBlock({ handleChange, userParams, submit }) {
+export default function SliderBlock({ handleChange, userParams, fetchData }) {
   return (
     <div className="slider-block">
       <p className="subscription-title">Choose your subscription type:</p>
@@ -74,7 +74,7 @@ export default function SliderBlock({ handleChange, userParams, submit }) {
           </div>
         </div>
 
-        <Button onClick={() => submit}>Submit</Button>
+        <Button onClick={() => fetchData(userParams)}>Submit</Button>
       </form>
     </div>
   );
@@ -83,5 +83,5 @@ export default function SliderBlock({ handleChange, userParams, submit }) {
 SliderBlock.propTypes = {
   handleChange: func.isRequired,
   userParams: objectOf(any).isRequired,
-  submit: func.isRequired,
+  fetchData: func.isRequired,
 };

@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 
 import './index.css';
 
-export default function Button({ children, onClick = undefined }) {
+export default function Button({ children, onClick }) {
   return (
     <div className="button-div">
       <button type="button" className="button" onClick={onClick}>{children}</button>
@@ -18,5 +18,5 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: '',
-  onClick: null,
+  onClick: () => {},
 };
