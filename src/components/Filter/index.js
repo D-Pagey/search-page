@@ -25,6 +25,23 @@ export default function Filter({
 
       <form className="filter-form">
         <div className="input-group">
+          <label htmlFor="vehicle-type" className="filter-label">
+            Vehicle Type
+          </label>
+          <select
+            type="text"
+            id="vehicle-type"
+            name="vehicle_type"
+            className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.vehicle_type}
+          >
+            <option value="Consumer">Consumer</option>
+            <option value="PCO">Private</option>
+          </select>
+        </div>
+
+        <div className="input-group">
           <label htmlFor="location" className="filter-label">
             Location
           </label>
@@ -97,7 +114,32 @@ export default function Filter({
             <option value="750">Under £750</option>
             <option value="1000">Under £1000</option>
             <option value="1500">Under £1500</option>
-            <option value="2000">Under £2000</option>
+            <option value="2500">Under £2500</option>
+          </select>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="vehicle_make" className="filter-label">
+            Vehicle Make
+          </label>
+          <select
+            type="text"
+            id="vehicle_make"
+            name="vehicle_make"
+            className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.vehicle_make}
+          >
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Citroen">Citroen</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Vauxhall">Vauxhall</option>
           </select>
         </div>
 
@@ -113,7 +155,6 @@ export default function Filter({
             onChange={handleChange}
             defaultValue={defaultValue.transmission}
           >
-            <option value="any">Any</option>
             <option value="automatic">Automatic</option>
             <option value="cvt">Cvt</option>
             <option value="manual">Manual</option>
@@ -155,7 +196,6 @@ export default function Filter({
             onChange={handleChange}
             defaultValue={defaultValue.year}
           >
-            <option value="any">Any</option>
             <option value="2018">2018</option>
             <option value="2017">2017</option>
             <option value="2016">2016</option>
@@ -178,10 +218,49 @@ export default function Filter({
             onChange={handleChange}
             defaultValue={defaultValue.fuel}
           >
-            <option value="any">Any</option>
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
             <option value="hybrid">Petrol Hybrid</option>
+          </select>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="car-type" className="filter-label">
+            Car Type
+          </label>
+          <select
+            type="text"
+            id="car-type"
+            name="tags"
+            className="filter-input dropdown"
+            // onChange={handleChange}
+            defaultValue={defaultValue.tags}
+          >
+            <option value="compact">Compact</option>
+            <option value="electric">Electric</option>
+            <option value="family">Family</option>
+            <option value="premium">Premium</option>
+            <option value="suv">SUV</option>
+          </select>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="body_type" className="filter-label">
+            Body Type
+          </label>
+          <select
+            type="text"
+            id="body_type"
+            name="body_type"
+            className="filter-input dropdown"
+            onChange={handleChange}
+            defaultValue={defaultValue.body_type}
+          >
+            <option value="convertible">Convertible</option>
+            <option value="estate">Estate</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="saloon">Saloon</option>
+            <option value="suv">SUVs</option>
           </select>
         </div>
       </form>

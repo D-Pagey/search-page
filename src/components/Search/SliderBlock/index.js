@@ -4,8 +4,6 @@ import { func, objectOf, any } from 'prop-types';
 import './index.css';
 import Button from '../../Button';
 
-// To Do: Make this form functional, changing fetch request
-
 export default function SliderBlock({ handleChange, userParams, fetchData }) {
   return (
     <div className="slider-block">
@@ -70,7 +68,7 @@ export default function SliderBlock({ handleChange, userParams, fetchData }) {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <span>months</span>
+            <span>{userParams.vehicle_type === 'Consumer' ? 'months' : 'weeks'}</span>
           </div>
         </div>
 

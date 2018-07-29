@@ -22,8 +22,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0 auto 40px;
+  margin: 0 auto 60px;
   padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .filter-form {
+    width: 720px;
+  }
 }
 
 .input-group {

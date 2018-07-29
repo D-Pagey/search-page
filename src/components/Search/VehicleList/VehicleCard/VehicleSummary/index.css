@@ -26,8 +26,7 @@
 
 .vehicle-availability {
   align-self: center;
-  height: 65px;
-  margin: 0 10px 0 0;
+  margin: 0 10px;
   text-align: center;
   width: 7.5rem;
 }

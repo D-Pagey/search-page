@@ -7,7 +7,7 @@ import FeaturesList from './FeaturesList';
 import PriceWrapper from './PriceWrapper';
 import VehicleSummary from './VehicleSummary';
 
-// To Do: I could reduce the amount of data passed down as props
+// I could reduce the amount of data passed down as props
 
 export default function VehicleCard({ data, months }) {
   return (
@@ -20,7 +20,7 @@ export default function VehicleCard({ data, months }) {
       <VehicleSummary data={data} />
       <KeyFacts data={data} />
       <FeaturesList features={data.features} id={data.id} />
-      <PriceWrapper data={data} months={months} />
+      <PriceWrapper data={data} time={months} />
     </div>
   );
 }

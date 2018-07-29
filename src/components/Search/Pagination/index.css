@@ -6,6 +6,12 @@
   width: 100%;
 }
 
+@media (min-width: 425px) {
+  .pagination-container {
+    margin-bottom: 25px;
+  }
+}
+
 .pagination-results {
   margin: 0;
 }
@@ -13,6 +19,18 @@
 .pagination-btn-container {
   margin-top: 10px;
   width: 232px;
+}
+
+@media (min-width: 425px) {
+  .pagination-btn-container {
+    width: 323px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pagination-btn-container {
+    width: 460px;
+  }
 }
 
 .page-list {

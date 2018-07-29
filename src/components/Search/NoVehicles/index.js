@@ -6,7 +6,7 @@ import Button from '../../Button';
 export default function NoVehicles() {
   return (
     <div className="no-vehicles-container">
-      <div>
+      <div className="no-vehicles-header">
         <h3 className="no-vehicles-title">looking for a specific car?</h3>
         <p>Let us know what car you are looking for, and we&apos;ll be in touch!</p>
       </div>

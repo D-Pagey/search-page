@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  .button-div {
+    width: initial;
+  }
+}
+
 .button {
   background-color: #50ff7d;
   border: 0;

@@ -14,3 +14,9 @@
     width: 390px;
   }
 }
+
+@media (min-width: 768px) {
+  .vehicle-list-container {
+    width: 100%;
+  }
+}
