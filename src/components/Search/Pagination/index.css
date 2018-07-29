@@ -1,9 +1,9 @@
 .pagination-container {
   align-items: center;
-  flex-direction: column;
   display: flex;
-  margin-bottom: 1rem;
-  width: 290px;
+  flex-direction: column;
+  margin-bottom: 70px;
+  width: 100%;
 }
 
 .pagination-results {
@@ -11,15 +11,15 @@
 }
 
 .pagination-btn-container {
-  height: 40px;
   margin-top: 10px;
-  width: 200px;
+  width: 232px;
 }
 
 .page-list {
   display: flex;
+  flex-wrap: wrap;
   height: inherit;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -27,13 +27,15 @@
 
 .page-item {
   display: flex;
+  margin: 3px;
 }
 
 .page-btn {
   background-color: white;
   border: 0;
   border-radius: 6px;
-  padding: 10px;
+  padding: 12.5px 5px;
+  width: 2.5rem;
 }
 
 .active {

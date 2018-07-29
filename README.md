@@ -20,12 +20,12 @@ model, year, color, price - see notes)
 - [ ] Add all fields able to search by for one vehicle type (please see live website)
 - [ ] Write unit/snapshot tests for most if not all components
 - [x] Add styling to make it look like https://www.joindrover.com/cars/search
-- [ ] *Bonus:* add functionality for pagination
+- [x] *Bonus:* add functionality for pagination
 
 #### 3. All out!
 
 - [ ] Search can search for both types of vehicles (Consumer & Private-Hire aka PCO)
-- [ ] Unless already done, Pagination!!
+- [x] Unless already done, Pagination!!
 - [x] Styling as close to original as possible
 - [ ] Fully responsive
 - [ ] *Bonus:* add google autocomplete to the location in the search filters

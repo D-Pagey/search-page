@@ -5,85 +5,38 @@ import './index.css';
 
 export default function Pagination({
   handleChange,
-  userParams,
-  totalCount,
+  metadata,
   fetchData,
 }) {
-  const { page } = userParams;
+  const { page } = metadata;
+  const perPage = metadata.per_page;
+
+  const numberOfPages = Math.ceil(metadata.total_count / 10);
+  const pagesArray = numberOfPages ? Array.from(new Array(numberOfPages)) : [];
 
   return (
     <div className="pagination-container">
       <p className="pagination-results">
-        {`Showing ${page}-${page}0 of
-        ${totalCount ? totalCount.total_count : 0} results`}
+        {`Showing ${(perPage * page) - (perPage - 1)}-${page * perPage} of
+        ${metadata ? metadata.total_count : 0} results`}
       </p>
       <div className="pagination-btn-container">
         <ul className="page-list">
-          <li className="page-item">
-            <button
-              type="button"
-              className={`page-btn ${userParams.page === 1 ? 'active' : null}`}
-              name="page"
-              value="1"
-              onClick={(event) => {
-                handleChange(event, () => fetchData());
-              }}
-            >
-            1
-            </button>
-          </li>
-          <li className="page-item">
-            <button
-              type="button"
-              className={`page-btn ${userParams.page === 2 ? 'active' : null}`}
-              name="page"
-              value="2"
-              onClick={(event) => {
-                handleChange(event, () => fetchData());
-              }}
-            >
-            2
-            </button>
-          </li>
-          <li className="page-item">
-            <button
-              type="button"
-              className={`page-btn ${userParams.page === 3 ? 'active' : null}`}
-              name="page"
-              value="3"
-              onClick={(event) => {
-                handleChange(event, () => fetchData());
-              }}
-            >
-            3
-            </button>
-          </li>
-          <li className="page-item">
-            <button
-              type="button"
-              className={`page-btn ${userParams.page === 4 ? 'active' : null}`}
-              name="page"
-              value="4"
-              onClick={(event) => {
-                handleChange(event, () => fetchData());
-              }}
-            >
-            4
-            </button>
-          </li>
-          <li className="page-item">
-            <button
-              type="button"
-              className={`page-btn ${userParams.page === 5 ? 'active' : null}`}
-              name="page"
-              value="5"
-              onClick={(event) => {
-                handleChange(event, () => fetchData());
-              }}
-            >
-            5
-            </button>
-          </li>
+          {pagesArray.map((element, i) => (
+            <li key={i.toString()} className="page-item">
+              <button
+                type="button"
+                className={`page-btn ${page === i + 1 ? 'active' : null}`}
+                name="page"
+                value={i + 1}
+                onClick={(event) => {
+                  handleChange(event, fetchData);
+                }}
+              >
+                {i + 1}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -92,16 +45,10 @@ export default function Pagination({
 
 Pagination.propTypes = {
   handleChange: func.isRequired,
-  userParams: objectOf(any).isRequired,
-  totalCount: objectOf(any),
+  metadata: objectOf(any),
   fetchData: func.isRequired,
 };
 
 Pagination.defaultProps = {
-  totalCount: {},
+  metadata: {},
 };
-
-/** To Do
- * Create page buttons based off of total results
- * Trigger rerender the page based off page number
- */

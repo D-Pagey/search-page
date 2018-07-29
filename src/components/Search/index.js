@@ -34,8 +34,7 @@ export default function Search(props) {
       <VehicleList results={results} userParams={userParams} />
       <Pagination
         handleChange={handleChange}
-        userParams={userParams}
-        totalCount={metadata}
+        metadata={metadata}
         fetchData={fetchData}
       />
       <NoVehicles />
@@ -46,8 +45,12 @@ export default function Search(props) {
 Search.propTypes = {
   handleChange: func.isRequired,
   userParams: objectOf(any).isRequired,
-  metadata: objectOf(any).isRequired,
+  metadata: objectOf(any),
   fetchData: func.isRequired,
   results: objectOf(any).isRequired,
   className: string.isRequired,
+};
+
+Search.defaultProps = {
+  metadata: {},
 };
