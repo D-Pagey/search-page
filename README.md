@@ -39,15 +39,17 @@ model, year, color, price - see notes)
 
 ---- 
 
-#### Notes
+## Notes
 
-I plan to continue working on this task to as close to an **All out!** standard 
-as possible. I've built a version that displays live data for a generic request. 
-I decided to go with a mobile first design and so have only built the app for 
-320px so far. With more time I would like to implement the following:
+I am happy to have completed the majority of the requirements on this task. I 
+plan to carry on working on this project to improve my unit testing skills and,
+to learn about Google's Autocomplete API. 
 
-* Redux
-* BEM CSS
-* More unit tests
-* The cool menu in the navbar
-* The various "To Do" comments in the code
+This project would also be a good opportunity for me to implement Redux or to 
+learn and use the Context API. 
+
+There are a few bugs or code I would like to refactor in the future. For example,
+the metadata object returned from the API provides very useful info that I could
+have used better.
+
+Overall, this was an enjoyable task to work on and I learnt a lot in the process.
