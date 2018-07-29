@@ -9,6 +9,12 @@
   height: 52px;
 }
 
+@media (min-width: 1024px) {
+  .back-to-search-div {
+    display: none;
+  }
+}
+
 .chevron {
   margin-left: 20px;
 }
@@ -24,11 +30,18 @@
   flex-direction: column;
   margin: 0 auto 60px;
   padding: 0 1rem;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .filter-form {
     width: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-form {
+    width: initial;
   }
 }
 

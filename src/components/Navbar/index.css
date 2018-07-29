@@ -3,6 +3,12 @@
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .navbar {
+    width: 95%;
+  }
+}
+
 .navbar-title {
   color: rgb(1, 39, 1);
   font-size: 2rem;

@@ -10,3 +10,10 @@
     width: 690px;
   }
 }
+
+@media (min-width: 1024px) {
+  .search-container {
+    padding: 0 15px;
+    width: 700px;
+  }
+}

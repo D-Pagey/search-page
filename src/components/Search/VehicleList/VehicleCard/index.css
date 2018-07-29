@@ -7,8 +7,23 @@
   margin-bottom: 15px;
 }
 
+@media (min-width: 1024px) {
+  .vehicle-card {
+    flex-direction: row;
+  }
+}
+
 .vehicle-img {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .vehicle-img {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 6px;
+    height: 270px;
+    width: 276px;
+  }
 }

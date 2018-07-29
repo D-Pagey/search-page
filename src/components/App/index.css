@@ -5,6 +5,14 @@
   margin: 0 auto 40px;
 }
 
+@media (min-width: 1024px) {
+  .app {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .refine-search-div {
   align-items: center;
   background-color: #172B24;  
@@ -16,6 +24,12 @@
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .refine-search-div {
+    display: none;
+  }
+}
+
 .hide {
   display: none;
 }
@@ -23,5 +37,7 @@
 @media (min-width: 1024px) {
   .hide {
     display: block;
+    margin-left: 32px;
+    width: 25%;
   }
 }

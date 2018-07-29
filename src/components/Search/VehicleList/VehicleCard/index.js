@@ -17,10 +17,12 @@ export default function VehicleCard({ data, months }) {
         alt="Car"
         className="vehicle-img"
       />
-      <VehicleSummary data={data} />
-      <KeyFacts data={data} />
-      <FeaturesList features={data.features} id={data.id} />
-      <PriceWrapper data={data} time={months} />
+      <div className="vehicle-copy">
+        <VehicleSummary data={data} />
+        <KeyFacts data={data} />
+        <FeaturesList features={data.features} id={data.id} />
+        <PriceWrapper data={data} time={months} />
+      </div>
     </div>
   );
 }

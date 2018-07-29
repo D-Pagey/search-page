@@ -27,7 +27,7 @@ model, year, color, price - see notes)
 - [x] Search can search for both types of vehicles (Consumer & Private-Hire aka PCO)
 - [x] Unless already done, Pagination!!
 - [x] Styling as close to original as possible
-- [ ] Fully responsive
+- [x] Fully responsive
 - [ ] *Bonus:* add google autocomplete to the location in the search filters
 
 ---- 
