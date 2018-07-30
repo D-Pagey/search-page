@@ -8,6 +8,7 @@ module.exports = {
         "jsx-a11y/label-has-for": 0,
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ]
 };

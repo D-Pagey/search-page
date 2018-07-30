@@ -53,3 +53,6 @@ the metadata object returned from the API provides very useful info that I could
 have used better.
 
 Overall, this was an enjoyable task to work on and I learnt a lot in the process.
+
+#### Bugs
+- chained requests are buggy

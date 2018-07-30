@@ -1,10 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '.';
+import Search from '.';
 
 it('should render', () => {
-  const wrapper = shallow(<App />);
+  const wrapper = shallow(<Search />);
   expect(wrapper).toMatchSnapshot();
 });
-
-// update ESLint for Jest .test files

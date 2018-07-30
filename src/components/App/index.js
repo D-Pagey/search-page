@@ -110,13 +110,3 @@ export default class App extends Component {
     );
   }
 }
-
-/**
- * Render both. Hide/show classes.
- * <div className=`filter ${isRefineSearch ? 'show' : 'hide'}`>
- *  <Filter className="filter"/>
- * </div>
- * <div className={isRefineSearch ? 'hide' : 'show'}>
- *  <Search className="search"/>
- * </div>
- */

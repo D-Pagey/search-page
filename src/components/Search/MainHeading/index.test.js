@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Filter from '.';
+import MainHeading from '.';
 
 it('should render', () => {
-  const wrapper = shallow(<Filter />);
+  const wrapper = shallow(<MainHeading />);
   expect(wrapper).toMatchSnapshot();
 });

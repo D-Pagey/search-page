@@ -13,15 +13,14 @@ import VehicleList from './VehicleList';
 import Pagination from './Pagination';
 import NoVehicles from './NoVehicles';
 
-export default function Search(props) {
-  const {
-    results,
-    handleChange,
-    userParams,
-    fetchData,
-    metadata,
-    className,
-  } = props;
+export default function Search({ 
+  results,
+  handleChange,
+  userParams,
+  fetchData,
+  metadata,
+  className,
+}) {
 
   return (
     <main className={className}>

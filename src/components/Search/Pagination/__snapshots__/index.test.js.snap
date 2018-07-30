@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="pagination-container"
+>
+  <p
+    className="pagination-results"
+  >
+    Showing NaN-NaN of
+            undefined results
+  </p>
+  <div
+    className="pagination-btn-container"
+  >
+    <ul
+      className="page-list"
+    />
+  </div>
+</div>
+`;

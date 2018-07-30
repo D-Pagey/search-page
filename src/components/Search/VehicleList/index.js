@@ -18,12 +18,12 @@ export default function VehicleList({ results, userParams }) {
         .map(element => (<VehicleCard
           data={element}
           key={element.id}
-          price={userParams}
+          userParams={userParams}
         />
         ));
     } else {
       content = `Unfortunately there are no results for this specific search. 
-      Please try and broaden the filers to see potential options.`;
+      Please try and broaden the filters to see potential options.`;
     }
   } else {
     content = 'Loading data...';

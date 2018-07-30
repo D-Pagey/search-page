@@ -4,7 +4,9 @@ exports[`should render 1`] = `
 <div
   className="no-vehicles-container"
 >
-  <div>
+  <div
+    className="no-vehicles-header"
+  >
     <h3
       className="no-vehicles-title"
     >
@@ -126,7 +128,7 @@ exports[`should render 1`] = `
       </label>
     </div>
     <Button
-      onClick={null}
+      onClick={[Function]}
     >
       Find my car
     </Button>

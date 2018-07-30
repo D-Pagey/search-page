@@ -9,7 +9,7 @@ import VehicleSummary from './VehicleSummary';
 
 // I could reduce the amount of data passed down as props
 
-export default function VehicleCard({ data, months }) {
+export default function VehicleCard({ data, months, userParams }) {
   return (
     <div className="vehicle-card">
       <img
@@ -21,7 +21,7 @@ export default function VehicleCard({ data, months }) {
         <VehicleSummary data={data} />
         <KeyFacts data={data} />
         <FeaturesList features={data.features} id={data.id} />
-        <PriceWrapper data={data} time={months} />
+        <PriceWrapper data={data} time={months} type={userParams.vehicle_type} />
       </div>
     </div>
   );
