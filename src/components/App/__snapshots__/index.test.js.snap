@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="app"
+>
+  <Navbar />
+  <Banner />
+  <Filter
+    className="hide"
+    defaultValue={
+      Object {
+        "body_type": undefined,
+        "fuel": undefined,
+        "location": "London",
+        "max_distance": 9999,
+        "number_of_months": 12,
+        "number_of_seats_min": undefined,
+        "number_of_weeks": 12,
+        "page": 1,
+        "price_max": 2500,
+        "rental_option": "commitment",
+        "sub_type": undefined,
+        "subscription_start_days": 30,
+        "tags": undefined,
+        "transmission": undefined,
+        "vehicle_make": undefined,
+        "vehicle_type": "Consumer",
+        "year": undefined,
+      }
+    }
+    handleChange={[Function]}
+    toggle={[Function]}
+  />
+  <Search
+    className="search-container"
+    fetchData={[Function]}
+    handleChange={[Function]}
+    metadata={Object {}}
+    results={Object {}}
+    userParams={
+      Object {
+        "body_type": undefined,
+        "fuel": undefined,
+        "location": "London",
+        "max_distance": 9999,
+        "number_of_months": 12,
+        "number_of_seats_min": undefined,
+        "number_of_weeks": 12,
+        "page": 1,
+        "price_max": 2500,
+        "rental_option": "commitment",
+        "sub_type": undefined,
+        "subscription_start_days": 30,
+        "tags": undefined,
+        "transmission": undefined,
+        "vehicle_make": undefined,
+        "vehicle_type": "Consumer",
+        "year": undefined,
+      }
+    }
+  />
+  <div
+    className="refine-search-div"
+  >
+    <Button
+      onClick={[Function]}
+    >
+      Refine your search
+    </Button>
+  </div>
+</div>
+`;

@@ -1,13 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render 1`] = `
-<main>
+<main
+  className="hide"
+>
   <MainHeading
     count={Object {}}
   />
-  <SliderBlock />
-  <VehicleList />
+  <SliderBlock
+    fetchData={[Function]}
+    handleChange={[Function]}
+    userParams={Object {}}
+  />
+  <VehicleList
+    results={Object {}}
+    userParams={Object {}}
+  />
   <Pagination
+    fetchData={[Function]}
+    handleChange={[Function]}
     metadata={Object {}}
   />
   <NoVehicles />

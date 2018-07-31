@@ -55,4 +55,5 @@ have used better.
 Overall, this was an enjoyable task to work on and I learnt a lot in the process.
 
 #### Bugs
-- chained requests are buggy
+* chained requests are buggy
+* Pricing incorrect

@@ -1,15 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Search from '.';
+import VehicleList from '.';
 
 it('should render', () => {
-  const wrapper = shallow(<Search 
+  const wrapper = shallow(<VehicleList 
     results={{}}
-    handleChange={() => {}}
     userParams={{}}
-    fetchData={() => {}}
-    metadata={{}}
-    className={'hide'}
     />);
   expect(wrapper).toMatchSnapshot();
 });

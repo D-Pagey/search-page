@@ -7,15 +7,114 @@ exports[`should render 1`] = `
   <p
     className="pagination-results"
   >
-    Showing NaN-NaN of
-            undefined results
+    Showing 1-10 of
+            67 results
   </p>
   <div
     className="pagination-btn-container"
   >
     <ul
       className="page-list"
-    />
+    >
+      <li
+        className="page-item"
+        key="0"
+      >
+        <button
+          className="page-btn active"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={1}
+        >
+          1
+        </button>
+      </li>
+      <li
+        className="page-item"
+        key="1"
+      >
+        <button
+          className="page-btn null"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={2}
+        >
+          2
+        </button>
+      </li>
+      <li
+        className="page-item"
+        key="2"
+      >
+        <button
+          className="page-btn null"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={3}
+        >
+          3
+        </button>
+      </li>
+      <li
+        className="page-item"
+        key="3"
+      >
+        <button
+          className="page-btn null"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={4}
+        >
+          4
+        </button>
+      </li>
+      <li
+        className="page-item"
+        key="4"
+      >
+        <button
+          className="page-btn null"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={5}
+        >
+          5
+        </button>
+      </li>
+      <li
+        className="page-item"
+        key="5"
+      >
+        <button
+          className="page-btn null"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={6}
+        >
+          6
+        </button>
+      </li>
+      <li
+        className="page-item"
+        key="6"
+      >
+        <button
+          className="page-btn null"
+          name="page"
+          onClick={[Function]}
+          type="button"
+          value={7}
+        >
+          7
+        </button>
+      </li>
+    </ul>
   </div>
 </div>
 `;

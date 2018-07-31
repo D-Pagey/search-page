@@ -8,8 +8,6 @@ import {
 
 import './index.css';
 
-// To Do: take user's input above into state to append to fetch url
-
 export default function Filter({
   toggle,
   handleChange,
