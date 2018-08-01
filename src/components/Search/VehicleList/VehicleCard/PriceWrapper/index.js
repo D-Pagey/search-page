@@ -11,7 +11,8 @@ export default function PriceWrapper({ data, time, type }) {
   return (
     <div className="price-wrapper">
       <div className="price-div">
-        <span><span className="price">£{price}</span> / {type === 'Consumer' ? 'Month' : 'Week'}</span>
+        <span><span className="price">£{price}</span> / 
+        {type === 'Consumer' ? 'Month' : 'Week'}</span>
         <span className="price-detail">(Monthly Vehicle Price inc. VAT)</span>
       </div>
       <Button>See more details</Button>
