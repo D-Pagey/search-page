@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div
+  className="key-facts"
+>
+  <ul
+    className="key-facts-list"
+  >
+    <li
+      className="key-facts-list-item"
+    />
+    <li
+      className="key-facts-list-item"
+    />
+    <li
+      className="key-facts-list-item"
+    >
+       MPG
+    </li>
+  </ul>
+  <ul
+    className="key-facts-list"
+  >
+    <li
+      className="key-facts-list-item"
+    />
+    <li
+      className="key-facts-list-item"
+    >
+       Seats
+    </li>
+    <li
+      className="key-facts-list-item"
+    />
+  </ul>
+  <ul
+    className="key-facts-list"
+  >
+    <li
+      className="key-facts-list-item"
+    />
+    <li
+      className="key-facts-list-item"
+    >
+       Doors
+    </li>
+  </ul>
+</div>
+`;

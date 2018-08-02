@@ -14,6 +14,21 @@ export default function Filter({
   defaultValue,
   className,
 }) {
+
+  const { 
+    vehicle_type, 
+    location, 
+    subscription_start_days, 
+    max_distance, price_max, 
+    vehicle_make, 
+    transmission, 
+    number_of_seats_min,
+    year, 
+    fuel, 
+    tags,
+    body_type
+   } = defaultValue;
+
   return (
     <div className={className}>
       <div className="back-to-search-div">
@@ -32,7 +47,7 @@ export default function Filter({
             name="vehicle_type"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.vehicle_type}
+            defaultValue={vehicle_type}
           >
             <option value="Consumer">Consumer</option>
             <option value="PCO">Private</option>
@@ -51,7 +66,7 @@ export default function Filter({
             className="filter-input"
             placeholder="Enter your location"
             onChange={handleChange}
-            value={defaultValue.location}
+            value={location}
           />
         </div>
 
@@ -65,7 +80,7 @@ export default function Filter({
             name="subscription_start_days"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.subscription_start_days}
+            defaultValue={subscription_start_days}
           >
             <option value="2">Next 2 Days</option>
             <option value="14">Next 14 Days</option>
@@ -83,7 +98,7 @@ export default function Filter({
             name="max_distance"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.max_distance}
+            defaultValue={max_distance}
           >
             <option value="25">25</option>
             <option value="50">50</option>
@@ -105,7 +120,7 @@ export default function Filter({
             name="price_max"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.price_max}
+            defaultValue={price_max}
           >
             <option value="200">Under £200</option>
             <option value="500">Under £500</option>
@@ -126,7 +141,7 @@ export default function Filter({
             name="vehicle_make"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.vehicle_make}
+            defaultValue={vehicle_make}
           >
             <option value="Audi">Audi</option>
             <option value="BMW">BMW</option>
@@ -151,7 +166,7 @@ export default function Filter({
             name="transmission"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.transmission}
+            defaultValue={transmission}
           >
             <option value="automatic">Automatic</option>
             <option value="cvt">Cvt</option>
@@ -169,7 +184,7 @@ export default function Filter({
             name="number_of_seats_min"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.number_of_seats_min}
+            defaultValue={number_of_seats_min}
           >
             <option value="2">2</option>
             <option value="3">3</option>
@@ -192,7 +207,7 @@ export default function Filter({
             name="year"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.year}
+            defaultValue={year}
           >
             <option value="2018">2018</option>
             <option value="2017">2017</option>
@@ -214,7 +229,7 @@ export default function Filter({
             name="fuel"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.fuel}
+            defaultValue={fuel}
           >
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
@@ -232,7 +247,7 @@ export default function Filter({
             name="tags"
             className="filter-input dropdown"
             // onChange={handleChange}
-            defaultValue={defaultValue.tags}
+            defaultValue={tags}
           >
             <option value="compact">Compact</option>
             <option value="electric">Electric</option>
@@ -252,7 +267,7 @@ export default function Filter({
             name="body_type"
             className="filter-input dropdown"
             onChange={handleChange}
-            defaultValue={defaultValue.body_type}
+            defaultValue={body_type}
           >
             <option value="convertible">Convertible</option>
             <option value="estate">Estate</option>

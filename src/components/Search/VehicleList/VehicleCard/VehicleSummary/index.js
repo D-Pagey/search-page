@@ -30,22 +30,29 @@ export default class VehicleSummary extends Component {
 
   render() {
     const { data } = this.props;
+    const { 
+      vehicle_make,
+      vehicle_model,
+      engine_size_information,
+      postcode,
+      available_start_date,
+    } = data;
 
     return (
       <div className="vehicle-summary">
         <div className="vehicle-details">
           <h3 className="vehicle-make">
-            {`${data.vehicle_make} ${data.vehicle_model} 
-            ${data.engine_size_information}`}
+            {`${vehicle_make} ${vehicle_model} 
+            ${engine_size_information}`}
           </h3>
           <p className="vehicle-location">
-          Located in {data.postcode.slice(0, 3)}
+          Located in {postcode.slice(0, 3)}
           </p>
         </div>
         <p className="vehicle-availability">
-          {`Available from ${this.getDay(data.available_start_date)} 
-           ${this.getMonth(data.available_start_date)} 
-           ${data.available_start_date.slice(0, 4)}`}
+          {`Available from ${this.getDay(available_start_date)} 
+           ${this.getMonth(available_start_date)} 
+           ${available_start_date.slice(0, 4)}`}
         </p>
       </div>
     );

@@ -8,7 +8,7 @@ export default function Pagination({
   metadata,
   fetchData,
 }) {
-  const { page } = metadata;
+  const { page, total_count } = metadata;
   const perPage = metadata.per_page;
 
   const numberOfPages = Math.ceil(metadata.total_count / 10);
@@ -18,7 +18,7 @@ export default function Pagination({
     <div className="pagination-container">
       <p className="pagination-results">
         {`Showing ${(perPage * page) - (perPage - 1)}-${page * perPage} of
-        ${metadata ? metadata.total_count : 0} results`}
+        ${metadata ? total_count : 0} results`}
       </p>
       <div className="pagination-btn-container">
         <ul className="page-list">

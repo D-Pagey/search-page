@@ -1,5 +1,5 @@
 import React from 'react';
-import { objectOf, any, number } from 'prop-types';
+import { objectOf, any, number, string } from 'prop-types';
 
 import './index.css';
 import Button from '../../../../Button';
@@ -23,4 +23,5 @@ export default function PriceWrapper({ data, time, type }) {
 PriceWrapper.propTypes = {
   data: objectOf(any).isRequired,
   time: number.isRequired,
+  type: string.isRequired
 };

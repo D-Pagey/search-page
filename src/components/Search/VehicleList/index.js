@@ -10,11 +10,13 @@ import './index.css';
 import VehicleCard from './VehicleCard';
 
 export default function VehicleList({ results, userParams }) {
+  const { data } = results;
+  
   let content;
 
-  if (results.data) {
-    if (results.data.length) {
-      content = results.data
+  if (data) {
+    if (data.length) {
+      content = data
         .map(element => (<VehicleCard
           data={element}
           key={element.id}

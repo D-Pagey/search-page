@@ -5,6 +5,7 @@ import './index.css';
 import Button from '../../Button';
 
 export default function SliderBlock({ handleChange, userParams, fetchData }) {
+  const { rental_option, number_of_months, vehicle_type } = userParams;
   return (
     <div className="slider-block">
       <p className="subscription-title">Choose your subscription type:</p>
@@ -17,7 +18,7 @@ export default function SliderBlock({ handleChange, userParams, fetchData }) {
             value="monthly"
             className="radio"
             onClick={handleChange}
-            defaultChecked={userParams.rental_option === 'monthly'}
+            defaultChecked={rental_option === 'monthly'}
           />
           <label className="subscription-label" htmlFor="1">
             Monthly Rolling Subscription (cancel or swap monthly)
@@ -33,7 +34,7 @@ export default function SliderBlock({ handleChange, userParams, fetchData }) {
               value="commitment"
               className="radio"
               onClick={handleChange}
-              defaultChecked={userParams.rental_option === 'commitment'}
+              defaultChecked={rental_option === 'commitment'}
             />
           </div>
           <label className="subscription-label" htmlFor="2">
@@ -52,7 +53,7 @@ export default function SliderBlock({ handleChange, userParams, fetchData }) {
             <select
               id="duration"
               className="months"
-              defaultValue={userParams.number_of_months}
+              defaultValue={number_of_months}
               name="number_of_months"
               onChange={handleChange}
             >
@@ -68,7 +69,7 @@ export default function SliderBlock({ handleChange, userParams, fetchData }) {
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <span>{userParams.vehicle_type === 'Consumer' ? 'months' : 'weeks'}</span>
+            <span>{vehicle_type === 'Consumer' ? 'months' : 'weeks'}</span>
           </div>
         </div>
 
