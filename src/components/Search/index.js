@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   objectOf,
   any,
@@ -13,7 +14,7 @@ import VehicleList from './VehicleList';
 import Pagination from './Pagination';
 import NoVehicles from './NoVehicles';
 
-export default function Search({ 
+export default function Search({
   results,
   handleChange,
   userParams,
@@ -21,16 +22,18 @@ export default function Search({
   metadata,
   className,
 }) {
-
   return (
     <main className={className}>
-      <MainHeading count={metadata} />
+      <MainHeading total={metadata.total_count} />
       <SliderBlock
         fetchData={fetchData}
         handleChange={handleChange}
         userParams={userParams}
+        rental_option={userParams.rental_option}
+        vehicle_type={userParams.vehicle_type}
+        months={userParams.number_of_months}
       />
-      <VehicleList results={results} userParams={userParams} />
+      <VehicleList data={results} vehicle_type={userParams.vehicle_type} />
       <Pagination
         handleChange={handleChange}
         metadata={metadata}

@@ -9,18 +9,17 @@ import {
 import './index.css';
 import VehicleCard from './VehicleCard';
 
-export default function VehicleList({ results, userParams }) {
-  const { data } = results;
-  
+export default function VehicleList({ data, vehicle_type }) {
   let content;
 
   if (data) {
     if (data.length) {
       content = data
         .map(element => (<VehicleCard
-          data={element}
-          key={element.id}
-          userParams={userParams}
+          images={element.images}
+          features={element.features}
+          id={element.id}
+          type={vehicle_type}
         />
         ));
     } else {

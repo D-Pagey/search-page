@@ -1,4 +1,4 @@
-.app {
+/* .app {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -12,9 +12,9 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-}
+} */
 
-.refine-search-div {
+/* .refine-search-div {
   align-items: center;
   background-color: #172B24;  
   bottom: 0;
@@ -29,7 +29,7 @@
   .refine-search-div {
     display: none;
   }
-}
+} */
 
 .hide {
   display: none;

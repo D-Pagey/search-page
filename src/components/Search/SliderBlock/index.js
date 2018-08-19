@@ -4,8 +4,14 @@ import { func, objectOf, any } from 'prop-types';
 import './index.css';
 import Button from '../../Button';
 
-export default function SliderBlock({ handleChange, userParams, fetchData }) {
-  const { rental_option, number_of_months, vehicle_type } = userParams;
+export default function SliderBlock({ 
+  handleChange,
+  userParams,
+  fetchData,
+  rental_option,
+  vehicle_type,
+  months
+}) {
   return (
     <div className="slider-block">
       <p className="subscription-title">Choose your subscription type:</p>
@@ -53,7 +59,7 @@ export default function SliderBlock({ handleChange, userParams, fetchData }) {
             <select
               id="duration"
               className="months"
-              defaultValue={number_of_months}
+              defaultValue={months}
               name="number_of_months"
               onChange={handleChange}
             >

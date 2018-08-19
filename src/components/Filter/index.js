@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   func,
   objectOf,
@@ -8,26 +9,78 @@ import {
 
 import './index.css';
 
+const FilterForm = styled.form`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 60px;
+  padding: 0 1rem;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+  @media (min-width: 1024px) {
+    width: initial;
+}
+`;
+
+const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  width: 100%;
+`;
+
+const FilterLabel = styled.label`
+  color: #292b2c;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 .2rem 2px;
+`;
+
+const Dropdown = styled.select`
+  background-color: white;
+  border: 1px solid #e4e3e3;
+  border-radius: 6px;
+  color: black;
+  font-size: 100%;
+  height: 40px;
+  padding: 0 10px;
+  width: 100%;
+`;
+
+const Input = styled.input`
+  background-color: white;
+  border: 1px solid #e4e3e3;
+  border-radius: 6px;
+  color: black;
+  font-size: 100%;
+  height: 40px;
+  padding: 0 10px;
+  width: 100%;
+`;
+
 export default function Filter({
   toggle,
   handleChange,
   defaultValue,
   className,
 }) {
-
-  const { 
-    vehicle_type, 
-    location, 
-    subscription_start_days, 
-    max_distance, price_max, 
-    vehicle_make, 
-    transmission, 
+  const {
+    vehicle_type,
+    location,
+    subscription_start_days,
+    max_distance,
+    price_max,
+    vehicle_make,
+    transmission,
     number_of_seats_min,
-    year, 
-    fuel, 
+    year,
+    fuel,
     tags,
-    body_type
-   } = defaultValue;
+    body_type,
+  } = defaultValue;
 
   return (
     <div className={className}>
@@ -36,29 +89,28 @@ export default function Filter({
         <p className="back-to-search">Back to your search results</p>
       </div>
 
-      <form className="filter-form">
-        <div className="input-group">
-          <label htmlFor="vehicle-type" className="filter-label">
+      <FilterForm>
+        <InputGroup>
+          <FilterLabel htmlFor="vehicle_type">
             Vehicle Type
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="vehicle-type"
             name="vehicle_type"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={vehicle_type}
           >
             <option value="Consumer">Consumer</option>
             <option value="PCO">Private</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="location" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="location">
             Location
-          </label>
-          <input
+          </FilterLabel>
+          <Input
             type="text"
             required
             id="location"
@@ -68,35 +120,33 @@ export default function Filter({
             onChange={handleChange}
             value={location}
           />
-        </div>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="start" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="start">
             Subscription starts within the
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="start"
             name="subscription_start_days"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={subscription_start_days}
           >
             <option value="2">Next 2 Days</option>
             <option value="14">Next 14 Days</option>
             <option value="30">Next 30 Days</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="distance" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="distance">
             Distance (radius in miles)
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="distance"
             name="max_distance"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={max_distance}
           >
@@ -107,18 +157,17 @@ export default function Filter({
             <option value="150">150</option>
             <option value="200">200</option>
             <option value="9999">Nationwide</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="budget" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="budget">
             Monthly Budget
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="budget"
             name="price_max"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={price_max}
           >
@@ -128,18 +177,17 @@ export default function Filter({
             <option value="1000">Under £1000</option>
             <option value="1500">Under £1500</option>
             <option value="2500">Under £2500</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="vehicle_make" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="vehicle_make">
             Vehicle Make
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="vehicle_make"
             name="vehicle_make"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={vehicle_make}
           >
@@ -153,36 +201,34 @@ export default function Filter({
             <option value="Peugeot">Peugeot</option>
             <option value="Toyota">Toyota</option>
             <option value="Vauxhall">Vauxhall</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="gearbox" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="gearbox">
             Gearbox
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="gearbox"
             name="transmission"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={transmission}
           >
             <option value="automatic">Automatic</option>
             <option value="cvt">Cvt</option>
             <option value="manual">Manual</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="seats" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="seats">
             Minimum number of seats
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="seats"
             name="number_of_seats_min"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={number_of_seats_min}
           >
@@ -194,18 +240,17 @@ export default function Filter({
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="year" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="year">
             Year
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="year"
             name="year"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={year}
           >
@@ -216,36 +261,34 @@ export default function Filter({
             <option value="2014">2014</option>
             <option value="2013">2013</option>
             <option value="2012">2012</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="fuel" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="fuel">
             Fuel Type
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="fuel"
             name="fuel"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={fuel}
           >
             <option value="petrol">Petrol</option>
             <option value="diesel">Diesel</option>
             <option value="hybrid">Petrol Hybrid</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="car-type" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="car-type">
             Car Type
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="car-type"
             name="tags"
-            className="filter-input dropdown"
             // onChange={handleChange}
             defaultValue={tags}
           >
@@ -254,18 +297,17 @@ export default function Filter({
             <option value="family">Family</option>
             <option value="premium">Premium</option>
             <option value="suv">SUV</option>
-          </select>
-        </div>
+          </Dropdown>
+        </InputGroup>
 
-        <div className="input-group">
-          <label htmlFor="body_type" className="filter-label">
+        <InputGroup>
+          <FilterLabel htmlFor="body_type">
             Body Type
-          </label>
-          <select
+          </FilterLabel>
+          <Dropdown
             type="text"
             id="body_type"
             name="body_type"
-            className="filter-input dropdown"
             onChange={handleChange}
             defaultValue={body_type}
           >
@@ -274,9 +316,9 @@ export default function Filter({
             <option value="hatchback">Hatchback</option>
             <option value="saloon">Saloon</option>
             <option value="suv">SUVs</option>
-          </select>
-        </div>
-      </form>
+          </Dropdown>
+        </InputGroup>
+      </FilterForm>
     </div>
   );
 }

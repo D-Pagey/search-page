@@ -19,7 +19,13 @@ export default function VehicleCard({ data, months, userParams }) {
         className="vehicle-img"
       />
       <div className="vehicle-copy">
-        <VehicleSummary data={data} />
+        <VehicleSummary 
+          make={data.vehicle_make}
+          model={data.vehicle_model}
+          engine={data.engine_size_information}
+          postcode={data.postcode}
+          available={data.available_start_date}
+        />
         <KeyFacts data={data} />
         <FeaturesList features={features} id={id} />
         <PriceWrapper data={data} time={months} type={vehicle_type} />

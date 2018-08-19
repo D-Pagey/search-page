@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import './index.css';
 import Navbar from '../Navbar';
@@ -6,6 +7,35 @@ import Banner from '../Banner';
 import Button from '../Button';
 import Search from '../Search';
 import Filter from '../Filter';
+
+const AppWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 40px;
+
+  @media (min-width: 1024px) {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
+
+const RefineSearch = styled.div`
+  lign-items: center;
+  background-color: #172B24;  
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 11px;
+  position: fixed;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
 
 const URL = 'https://app.joindrover.com/api/web/vehicles';
 
@@ -86,7 +116,7 @@ export default class App extends Component {
       : 'Refine your search';
 
     return (
-      <div className="app">
+      <AppWrapper>
         <Navbar />
         <Banner />
         <Filter
@@ -103,10 +133,10 @@ export default class App extends Component {
           metadata={results.metadata}
           className={isRefineSearch ? 'hide' : 'search-container'}
         />
-        <div className="refine-search-div">
+        <RefineSearch>
           <Button onClick={this.toggleRefineSearch}>{buttonText}</Button>
-        </div>
-      </div>
+        </RefineSearch>
+      </AppWrapper>
     );
   }
 }

@@ -58,3 +58,11 @@ Overall, this was an enjoyable task to work on and I learnt a lot in the process
 - Bug: double check chained requests
 - Bug: check pricing matches with production version
 - Change display and pricing for monthly rolling subscription
+- styled components
+- redux
+- optimise props
+- unit testing
+- google autocomplete
+- onchange filter
+- lose submit?
+- images?
