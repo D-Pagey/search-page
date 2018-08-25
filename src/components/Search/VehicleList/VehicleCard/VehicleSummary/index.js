@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { objectOf, any } from 'prop-types';
+import { string } from 'prop-types';
 
 import './index.css';
 
 export default class VehicleSummary extends Component {
-  static propTypes = {
-    data: objectOf(any).isRequired,
-  }
-
   getDay = (date) => {
     const day = date.slice(8);
 
@@ -29,7 +25,13 @@ export default class VehicleSummary extends Component {
   }
 
   render() {
-    const { make, model, engine, postcode, available } = this.props;
+    const {
+      make,
+      model,
+      engine,
+      postcode,
+      available,
+    } = this.props;
 
     return (
       <div className="vehicle-summary">
@@ -51,3 +53,11 @@ export default class VehicleSummary extends Component {
     );
   }
 }
+
+VehicleSummary.propTypes = {
+  make: string.isRequired,
+  postcode: string.isRequired,
+  engine: string.isRequired,
+  model: string.isRequired,
+  available: string.isRequired,
+};

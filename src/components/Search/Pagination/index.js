@@ -1,24 +1,23 @@
 import React from 'react';
-import { func, objectOf, any } from 'prop-types';
+import { number, func } from 'prop-types';
 
 import './index.css';
 
 export default function Pagination({
   handleChange,
-  metadata,
   fetchData,
+  total,
+  currentPage,
+  numberPerPage,
 }) {
-  const { page, total_count } = metadata;
-  const perPage = metadata.per_page;
-
-  const numberOfPages = Math.ceil(metadata.total_count / 10);
+  const numberOfPages = Math.ceil(total / 10);
   const pagesArray = numberOfPages ? Array.from(new Array(numberOfPages)) : [];
 
   return (
     <div className="pagination-container">
       <p className="pagination-results">
-        {`Showing ${(perPage * page) - (perPage - 1)}-${page * perPage} of
-        ${metadata ? total_count : 0} results`}
+        {`Showing ${(numberPerPage * currentPage) - (numberPerPage - 1)}-
+        ${currentPage * numberPerPage} of ${total || 0} results`}
       </p>
       <div className="pagination-btn-container">
         <ul className="page-list">
@@ -26,7 +25,7 @@ export default function Pagination({
             <li key={i.toString()} className="page-item">
               <button
                 type="button"
-                className={`page-btn ${page === i + 1 ? 'active' : null}`}
+                className={`page-btn ${currentPage === i + 1 ? 'active' : null}`}
                 name="page"
                 value={i + 1}
                 onClick={(event) => {
@@ -45,10 +44,14 @@ export default function Pagination({
 
 Pagination.propTypes = {
   handleChange: func.isRequired,
-  metadata: objectOf(any),
   fetchData: func.isRequired,
+  total: number,
+  currentPage: number,
+  numberPerPage: number,
 };
 
 Pagination.defaultProps = {
-  metadata: {},
+  total: '',
+  currentPage: '',
+  numberPerPage: 10,
 };

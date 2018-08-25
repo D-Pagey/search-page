@@ -126,11 +126,14 @@ export default class App extends Component {
           className={isRefineSearch ? 'filter-container' : 'hide'}
         />
         <Search
-          results={results}
+          data={results.data}
           userParams={query}
           handleChange={this.handleChange}
           fetchData={this.fetchData}
           metadata={results.metadata}
+          total={results.metadata ? results.metadata.total_count : 0}
+          page={results.metadata ? results.metadata.page : 0}
+          perPage={results.metadata ? results.metadata.per_page : 0}
           className={isRefineSearch ? 'hide' : 'search-container'}
         />
         <RefineSearch>

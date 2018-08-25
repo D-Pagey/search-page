@@ -1,16 +1,18 @@
 import React from 'react';
-import { func, objectOf, any } from 'prop-types';
+import {
+  func, objectOf, any, string, number,
+} from 'prop-types';
 
 import './index.css';
 import Button from '../../Button';
 
-export default function SliderBlock({ 
+export default function SliderBlock({
   handleChange,
   userParams,
   fetchData,
-  rental_option,
-  vehicle_type,
-  months
+  rentalOption,
+  vehicleType,
+  months,
 }) {
   return (
     <div className="slider-block">
@@ -24,7 +26,7 @@ export default function SliderBlock({
             value="monthly"
             className="radio"
             onClick={handleChange}
-            defaultChecked={rental_option === 'monthly'}
+            defaultChecked={rentalOption === 'monthly'}
           />
           <label className="subscription-label" htmlFor="1">
             Monthly Rolling Subscription (cancel or swap monthly)
@@ -40,7 +42,7 @@ export default function SliderBlock({
               value="commitment"
               className="radio"
               onClick={handleChange}
-              defaultChecked={rental_option === 'commitment'}
+              defaultChecked={rentalOption === 'commitment'}
             />
           </div>
           <label className="subscription-label" htmlFor="2">
@@ -75,7 +77,7 @@ export default function SliderBlock({
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <span>{vehicle_type === 'Consumer' ? 'months' : 'weeks'}</span>
+            <span>{vehicleType === 'Consumer' ? 'months' : 'weeks'}</span>
           </div>
         </div>
 
@@ -89,4 +91,7 @@ SliderBlock.propTypes = {
   handleChange: func.isRequired,
   userParams: objectOf(any).isRequired,
   fetchData: func.isRequired,
+  vehicleType: string.isRequired,
+  rentalOption: string.isRequired,
+  months: number.isRequired,
 };

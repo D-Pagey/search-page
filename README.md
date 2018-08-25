@@ -60,7 +60,6 @@ Overall, this was an enjoyable task to work on and I learnt a lot in the process
 - Change display and pricing for monthly rolling subscription
 - styled components
 - redux
-- optimise props
 - unit testing
 - google autocomplete
 - onchange filter

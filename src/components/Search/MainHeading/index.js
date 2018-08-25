@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, number } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -14,7 +14,9 @@ export default function MainHeading({ total }) {
 }
 
 MainHeading.propTypes = {
-  count: shape({
-    total_count: number,
-  }),
+  total: PropTypes.number,
+};
+
+MainHeading.defaultProps = {
+  total: '',
 };

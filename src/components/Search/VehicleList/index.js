@@ -1,25 +1,19 @@
 import React from 'react';
-import {
-  shape,
-  objectOf,
-  arrayOf,
-  any,
-} from 'prop-types';
+import { objectOf, any, string } from 'prop-types';
 
 import './index.css';
 import VehicleCard from './VehicleCard';
 
-export default function VehicleList({ data, vehicle_type }) {
+export default function VehicleList({ data, type }) {
   let content;
 
   if (data) {
     if (data.length) {
       content = data
         .map(element => (<VehicleCard
-          images={element.images}
-          features={element.features}
-          id={element.id}
-          type={vehicle_type}
+          data={element}
+          key={element.id}
+          type={type}
         />
         ));
     } else {
@@ -38,9 +32,6 @@ export default function VehicleList({ data, vehicle_type }) {
 }
 
 VehicleList.propTypes = {
-  results: shape({
-    metadata: objectOf(any),
-    data: arrayOf(any),
-  }).isRequired,
-  userParams: objectOf(any).isRequired,
+  data: objectOf(any).isRequired,
+  type: string.isRequired,
 };

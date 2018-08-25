@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   objectOf,
   any,
   func,
   string,
+  number,
 } from 'prop-types';
 
 import './index.css';
@@ -15,28 +15,32 @@ import Pagination from './Pagination';
 import NoVehicles from './NoVehicles';
 
 export default function Search({
-  results,
+  data,
   handleChange,
   userParams,
   fetchData,
-  metadata,
+  total,
+  page,
+  perPage,
   className,
 }) {
   return (
     <main className={className}>
-      <MainHeading total={metadata.total_count} />
+      <MainHeading total={total} />
       <SliderBlock
         fetchData={fetchData}
         handleChange={handleChange}
         userParams={userParams}
-        rental_option={userParams.rental_option}
-        vehicle_type={userParams.vehicle_type}
+        rentalOption={userParams.rental_option}
+        vehicleType={userParams.vehicle_type}
         months={userParams.number_of_months}
       />
-      <VehicleList data={results} vehicle_type={userParams.vehicle_type} />
+      <VehicleList data={data} type={userParams.vehicle_type} />
       <Pagination
+        total={total}
+        currentPage={page}
+        numberPerPage={perPage}
         handleChange={handleChange}
-        metadata={metadata}
         fetchData={fetchData}
       />
       <NoVehicles />
@@ -45,14 +49,12 @@ export default function Search({
 }
 
 Search.propTypes = {
+  data: objectOf(any).isRequired,
   handleChange: func.isRequired,
   userParams: objectOf(any).isRequired,
-  metadata: objectOf(any),
   fetchData: func.isRequired,
-  results: objectOf(any).isRequired,
+  total: number.isRequired,
+  page: number.isRequired,
+  perPage: number.isRequired,
   className: string.isRequired,
-};
-
-Search.defaultProps = {
-  metadata: {},
 };
