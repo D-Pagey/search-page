@@ -1,15 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import './index.css';
+const MainHeadingWrapper = styled.div`
+  padding: 15px 0;
+`;
+
+const MainHeadingTitle = styled.h2`
+  line-height: 1.1;
+  margin: 0;
+`;
 
 export default function MainHeading({ total }) {
   return (
-    <div className="main-heading-container">
-      <h2 className="main-heading">
+    <MainHeadingWrapper>
+      <MainHeadingTitle>
         {total} VEHICLES FOUND NEAR LONDON, UNITED KINGDOM
-      </h2>
-    </div>
+      </MainHeadingTitle>
+    </MainHeadingWrapper>
   );
 }
 

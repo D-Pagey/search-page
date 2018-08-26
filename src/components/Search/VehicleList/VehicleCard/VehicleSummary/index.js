@@ -57,7 +57,11 @@ export default class VehicleSummary extends Component {
 VehicleSummary.propTypes = {
   make: string.isRequired,
   postcode: string.isRequired,
-  engine: string.isRequired,
+  engine: string,
   model: string.isRequired,
   available: string.isRequired,
+};
+
+VehicleSummary.defaultProps = {
+  engine: '',
 };

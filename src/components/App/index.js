@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import './index.css';
 import Navbar from '../Navbar';
 import Banner from '../Banner';
 import Button from '../Button';
@@ -23,7 +22,7 @@ const AppWrapper = styled.div`
 `;
 
 const RefineSearch = styled.div`
-  lign-items: center;
+  align-items: center;
   background-color: #172B24;  
   bottom: 0;
   display: flex;
@@ -56,7 +55,6 @@ export default class App extends Component {
       rental_option: 'commitment',
       subscription_start_days: 30,
       sub_type: undefined,
-      tags: undefined,
       transmission: undefined,
       vehicle_make: undefined,
       vehicle_type: 'Consumer',
@@ -122,8 +120,18 @@ export default class App extends Component {
         <Filter
           toggle={this.toggleRefineSearch}
           handleChange={this.handleChange}
-          defaultValue={query}
           className={isRefineSearch ? 'filter-container' : 'hide'}
+          vehicleType={query.vehicle_type}
+          location={query.location}
+          start={query.subscription_start_days}
+          distance={query.max_distance}
+          price={query.price_max}
+          vehicleMake={query.vehicle_make}
+          transmission={query.transmission}
+          seats={query.number_of_seats_min}
+          year={query.year}
+          fuel={query.fuel}
+          bodyType={query.body_type}
         />
         <Search
           data={results.data}

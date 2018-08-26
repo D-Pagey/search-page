@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   objectOf,
+  arrayOf,
   any,
   func,
   string,
@@ -49,7 +50,7 @@ export default function Search({
 }
 
 Search.propTypes = {
-  data: objectOf(any).isRequired,
+  data: arrayOf(any),
   handleChange: func.isRequired,
   userParams: objectOf(any).isRequired,
   fetchData: func.isRequired,
@@ -57,4 +58,8 @@ Search.propTypes = {
   page: number.isRequired,
   perPage: number.isRequired,
   className: string.isRequired,
+};
+
+Search.defaultProps = {
+  data: [],
 };

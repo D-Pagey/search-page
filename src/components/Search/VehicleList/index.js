@@ -1,5 +1,5 @@
 import React from 'react';
-import { objectOf, any, string } from 'prop-types';
+import { arrayOf, any, string } from 'prop-types';
 
 import './index.css';
 import VehicleCard from './VehicleCard';
@@ -32,6 +32,6 @@ export default function VehicleList({ data, type }) {
 }
 
 VehicleList.propTypes = {
-  data: objectOf(any).isRequired,
+  data: arrayOf(any).isRequired,
   type: string.isRequired,
 };

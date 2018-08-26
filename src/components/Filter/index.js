@@ -2,12 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   func,
-  objectOf,
-  any,
   string,
+  number,
 } from 'prop-types';
-
-import './index.css';
 
 const FilterForm = styled.form`
   align-items: center;
@@ -16,7 +13,6 @@ const FilterForm = styled.form`
   margin: 0 auto 60px;
   padding: 0 1rem;
   width: 100%;
-
   @media (min-width: 768px) {
     width: 720px;
   }
@@ -61,33 +57,59 @@ const Input = styled.input`
   width: 100%;
 `;
 
+const BackToSearchWrapper = styled.div`
+  align-items: center;
+  background-color: #172B24;
+  display: flex;
+  height: 52px;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+
+const BackToSearchText = styled.p`
+  color: white;
+  margin-left: 10px;
+`;
+
+const Chevron = styled.svg`
+  margin-left: 20px;
+`;
+
+/* eslint-disable */
+const FilterWrapper = styled.div`
+  display: ${props => props.className === 'hide' ? 'none' : 'block'};
+  width: 100%;
+  @media (min-width: 1024px) {
+    display: block;
+    margin-left: 32px;
+    width: 25%;
+  }
+`;
+/* eslint-enable */
+
 export default function Filter({
   toggle,
   handleChange,
-  defaultValue,
   className,
+  vehicleType,
+  location,
+  start,
+  distance,
+  price,
+  vehicleMake,
+  transmission,
+  seats,
+  year,
+  fuel,
+  bodyType,
 }) {
-  const {
-    vehicle_type,
-    location,
-    subscription_start_days,
-    max_distance,
-    price_max,
-    vehicle_make,
-    transmission,
-    number_of_seats_min,
-    year,
-    fuel,
-    tags,
-    body_type,
-  } = defaultValue;
-
   return (
-    <div className={className}>
-      <div className="back-to-search-div">
-        <svg className="chevron" onClick={toggle} id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 43.41" width="20px" height="20px"><title>white_chevron</title><rect x="-29.83" y="-19.96" width="83.33" height="83.33" rx="41.67" ry="41.67" fill="none" /><polyline points="21.17 1.71 11.83 11.71 2.5 21.71 11.83 31.71 21.17 41.71" fill="none" stroke="#ffffff" strokeLinejoin="round" strokeWidth="5px" /></svg>
-        <p className="back-to-search">Back to your search results</p>
-      </div>
+    <FilterWrapper className={className}>
+      <BackToSearchWrapper>
+        <Chevron onClick={toggle} id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 43.41" width="20px" height="20px"><title>white_chevron</title><rect x="-29.83" y="-19.96" width="83.33" height="83.33" rx="41.67" ry="41.67" fill="none" /><polyline points="21.17 1.71 11.83 11.71 2.5 21.71 11.83 31.71 21.17 41.71" fill="none" stroke="#ffffff" strokeLinejoin="round" strokeWidth="5px" /></Chevron>
+        <BackToSearchText>Back to your search results</BackToSearchText>
+      </BackToSearchWrapper>
 
       <FilterForm>
         <InputGroup>
@@ -99,7 +121,7 @@ export default function Filter({
             id="vehicle-type"
             name="vehicle_type"
             onChange={handleChange}
-            defaultValue={vehicle_type}
+            defaultValue={vehicleType}
           >
             <option value="Consumer">Consumer</option>
             <option value="PCO">Private</option>
@@ -131,7 +153,7 @@ export default function Filter({
             id="start"
             name="subscription_start_days"
             onChange={handleChange}
-            defaultValue={subscription_start_days}
+            defaultValue={start}
           >
             <option value="2">Next 2 Days</option>
             <option value="14">Next 14 Days</option>
@@ -148,7 +170,7 @@ export default function Filter({
             id="distance"
             name="max_distance"
             onChange={handleChange}
-            defaultValue={max_distance}
+            defaultValue={distance}
           >
             <option value="25">25</option>
             <option value="50">50</option>
@@ -169,7 +191,7 @@ export default function Filter({
             id="budget"
             name="price_max"
             onChange={handleChange}
-            defaultValue={price_max}
+            defaultValue={price}
           >
             <option value="200">Under £200</option>
             <option value="500">Under £500</option>
@@ -189,7 +211,7 @@ export default function Filter({
             id="vehicle_make"
             name="vehicle_make"
             onChange={handleChange}
-            defaultValue={vehicle_make}
+            defaultValue={vehicleMake}
           >
             <option value="Audi">Audi</option>
             <option value="BMW">BMW</option>
@@ -230,7 +252,7 @@ export default function Filter({
             id="seats"
             name="number_of_seats_min"
             onChange={handleChange}
-            defaultValue={number_of_seats_min}
+            defaultValue={seats}
           >
             <option value="2">2</option>
             <option value="3">3</option>
@@ -289,8 +311,6 @@ export default function Filter({
             type="text"
             id="car-type"
             name="tags"
-            // onChange={handleChange}
-            defaultValue={tags}
           >
             <option value="compact">Compact</option>
             <option value="electric">Electric</option>
@@ -309,7 +329,7 @@ export default function Filter({
             id="body_type"
             name="body_type"
             onChange={handleChange}
-            defaultValue={body_type}
+            defaultValue={bodyType}
           >
             <option value="convertible">Convertible</option>
             <option value="estate">Estate</option>
@@ -319,13 +339,38 @@ export default function Filter({
           </Dropdown>
         </InputGroup>
       </FilterForm>
-    </div>
+    </FilterWrapper>
   );
 }
 
 Filter.propTypes = {
   toggle: func.isRequired,
   handleChange: func.isRequired,
-  defaultValue: objectOf(any).isRequired,
-  className: string.isRequired,
+  className: string,
+  vehicleMake: string,
+  location: string,
+  start: number,
+  vehicleType: string,
+  price: number,
+  year: number,
+  fuel: string,
+  seats: number,
+  bodyType: string,
+  transmission: string,
+  distance: number,
+};
+
+Filter.defaultProps = {
+  className: 'filter-container',
+  vehicleMake: '',
+  location: '',
+  start: 0,
+  vehicleType: '',
+  price: 0,
+  year: 0,
+  fuel: '',
+  seats: 0,
+  bodyType: '',
+  transmission: '',
+  distance: 0,
 };

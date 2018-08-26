@@ -34,7 +34,7 @@ export default function KeyFacts({
 }
 
 KeyFacts.propTypes = {
-  year: number.isRequired,
+  year: string.isRequired,
   fuel: string.isRequired,
   mpg: number.isRequired,
   body: string.isRequired,
