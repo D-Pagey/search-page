@@ -4,6 +4,7 @@ import {
   func,
   string,
   number,
+  bool,
 } from 'prop-types';
 
 const FilterForm = styled.form`
@@ -78,7 +79,7 @@ const Chevron = styled.svg`
 
 /* eslint-disable */
 const FilterWrapper = styled.div`
-  display: ${props => props.className === 'hide' ? 'none' : 'block'};
+  display: ${props => props.hide ? 'none' : 'block'};
   width: 100%;
   @media (min-width: 1024px) {
     display: block;
@@ -91,7 +92,7 @@ const FilterWrapper = styled.div`
 export default function Filter({
   toggle,
   handleChange,
-  className,
+  hide,
   vehicleType,
   location,
   start,
@@ -105,7 +106,7 @@ export default function Filter({
   bodyType,
 }) {
   return (
-    <FilterWrapper className={className}>
+    <FilterWrapper hide={hide}>
       <BackToSearchWrapper>
         <Chevron onClick={toggle} id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 43.41" width="20px" height="20px"><title>white_chevron</title><rect x="-29.83" y="-19.96" width="83.33" height="83.33" rx="41.67" ry="41.67" fill="none" /><polyline points="21.17 1.71 11.83 11.71 2.5 21.71 11.83 31.71 21.17 41.71" fill="none" stroke="#ffffff" strokeLinejoin="round" strokeWidth="5px" /></Chevron>
         <BackToSearchText>Back to your search results</BackToSearchText>
@@ -346,7 +347,7 @@ export default function Filter({
 Filter.propTypes = {
   toggle: func.isRequired,
   handleChange: func.isRequired,
-  className: string,
+  hide: bool,
   vehicleMake: string,
   location: string,
   start: number,
@@ -361,7 +362,7 @@ Filter.propTypes = {
 };
 
 Filter.defaultProps = {
-  className: 'filter-container',
+  hide: true,
   vehicleMake: '',
   location: '',
   start: 0,

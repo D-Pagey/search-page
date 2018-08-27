@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import './index.css';
 import Button from '../../Button';
 
 const NoVehiclesWrapper = styled.div`

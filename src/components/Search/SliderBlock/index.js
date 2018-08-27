@@ -1,10 +1,67 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   func, objectOf, any, string, number,
 } from 'prop-types';
 
-import './index.css';
 import Button from '../../Button';
+
+const SliderBlockWrapper = styled.div`
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 6px;
+  padding: 8px 16px 4px;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const SubscriptionTitle = styled.p`
+  font-weight: bold;
+  margin: 0;
+`;
+
+const SubscriptionForm = styled.form`
+  margin-top: 5px;
+`;
+
+const RentalOptionsWrapper = styled.div`
+  display: flex;
+  margin-bottom: 8px;
+`;
+
+const RadioButton = styled.input.attrs({
+  type: 'radio',
+})`
+  margin-top: 4px;
+`;
+
+const SubscriptionLabel = styled.label`
+  line-height: 1.5;
+  padding-left: 8px;
+`;
+
+const DurationWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 10px;
+`;
+
+const DurationTitle = styled.label`
+  margin: 0;
+  font-size: 0.9rem;
+`;
+
+const MonthsDropdown = styled.select`
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  height: 2rem;
+  line-height: 1.5;
+  margin: 0 8px;
+  padding-left: 7px;
+`;
 
 export default function SliderBlock({
   handleChange,
@@ -15,52 +72,42 @@ export default function SliderBlock({
   months,
 }) {
   return (
-    <div className="slider-block">
-      <p className="subscription-title">Choose your subscription type:</p>
-      <form className="subscription-form">
-        <div className="rental-options">
-          <input
-            type="radio"
+    <SliderBlockWrapper>
+      <SubscriptionTitle>Choose your subscription type:</SubscriptionTitle>
+      <SubscriptionForm>
+        <RentalOptionsWrapper>
+          <RadioButton
             name="rental_option"
             id="1"
             value="monthly"
-            className="radio"
             onClick={handleChange}
             defaultChecked={rentalOption === 'monthly'}
           />
-          <label className="subscription-label" htmlFor="1">
+          <SubscriptionLabel htmlFor="1">
             Monthly Rolling Subscription (cancel or swap monthly)
-          </label>
-        </div>
+          </SubscriptionLabel>
+        </RentalOptionsWrapper>
 
-        <div className="rental-options">
-          <div className="select-input-wrapper">
-            <input
-              type="radio"
+        <RentalOptionsWrapper>
+          <div>
+            <RadioButton
               name="rental_option"
               id="2"
               value="commitment"
-              className="radio"
               onClick={handleChange}
               defaultChecked={rentalOption === 'commitment'}
             />
           </div>
-          <label className="subscription-label" htmlFor="2">
+          <SubscriptionLabel htmlFor="2">
           Minimum Commitment Subscriptions (get discounts!)
-          </label>
-        </div>
+          </SubscriptionLabel>
+        </RentalOptionsWrapper>
 
-        <div className="duration-container">
-          <label
-            className="duration-title"
-            htmlFor="duration"
-          >
-            Subscription Duration
-          </label>
-          <div className="length">
-            <select
+        <DurationWrapper>
+          <DurationTitle htmlFor="duration">Subscription Duration</DurationTitle>
+          <div>
+            <MonthsDropdown
               id="duration"
-              className="months"
               defaultValue={months}
               name="number_of_months"
               onChange={handleChange}
@@ -76,14 +123,14 @@ export default function SliderBlock({
               <option value="10">10</option>
               <option value="11">11</option>
               <option value="12">12</option>
-            </select>
+            </MonthsDropdown>
             <span>{vehicleType === 'Consumer' ? 'months' : 'weeks'}</span>
           </div>
-        </div>
+        </DurationWrapper>
 
         <Button onClick={() => fetchData(userParams)}>Submit</Button>
-      </form>
-    </div>
+      </SubscriptionForm>
+    </SliderBlockWrapper>
   );
 }
 

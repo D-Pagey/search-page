@@ -1,7 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 import { number, string } from 'prop-types';
 
-import './index.css';
+const KeyFactsWrapper = styled.div`
+  border-bottom: 1px solid #e4e4e4;
+  display: flex;
+  justify-content: space-around;
+`;
+
+const KeyFactsList = styled.ul`
+  margin: 5px 10px 5px 0;
+  padding-left: 30px;
+`;
+
+const KeyFactsItem = styled.li`
+  text-transform: capitalize;
+`;
 
 export default function KeyFacts({
   year,
@@ -14,22 +28,22 @@ export default function KeyFacts({
   doors,
 }) {
   return (
-    <div className="key-facts">
-      <ul className="key-facts-list">
-        <li className="key-facts-list-item">{year}</li>
-        <li className="key-facts-list-item">{fuel}</li>
-        <li className="key-facts-list-item">{mpg} MPG</li>
-      </ul>
-      <ul className="key-facts-list">
-        <li className="key-facts-list-item">{body}</li>
-        <li className="key-facts-list-item">{seats} Seats</li>
-        <li className="key-facts-list-item">{color}</li>
-      </ul>
-      <ul className="key-facts-list">
-        <li className="key-facts-list-item">{transmission}</li>
-        <li className="key-facts-list-item">{doors} Doors</li>
-      </ul>
-    </div>
+    <KeyFactsWrapper>
+      <KeyFactsList>
+        <KeyFactsItem>{year}</KeyFactsItem>
+        <KeyFactsItem>{fuel}</KeyFactsItem>
+        <KeyFactsItem>{mpg} MPG</KeyFactsItem>
+      </KeyFactsList>
+      <KeyFactsList>
+        <KeyFactsItem>{body}</KeyFactsItem>
+        <KeyFactsItem>{seats} Seats</KeyFactsItem>
+        <KeyFactsItem>{color}</KeyFactsItem>
+      </KeyFactsList>
+      <KeyFactsList>
+        <KeyFactsItem>{transmission}</KeyFactsItem>
+        <KeyFactsItem>{doors} Doors</KeyFactsItem>
+      </KeyFactsList>
+    </KeyFactsWrapper>
   );
 }
 

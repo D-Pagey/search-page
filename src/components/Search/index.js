@@ -1,19 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   objectOf,
   arrayOf,
   any,
   func,
-  string,
+  bool,
   number,
 } from 'prop-types';
 
-import './index.css';
 import MainHeading from './MainHeading';
 import SliderBlock from './SliderBlock';
 import VehicleList from './VehicleList';
 import Pagination from './Pagination';
 import NoVehicles from './NoVehicles';
+
+/* eslint-disable */
+const SearchWrapper = styled.main`
+  align-items: center;
+  display: ${props => props.hide ? 'none' : 'flex'};
+  flex-direction: column;
+  padding: 0 15px;
+  @media (min-width: 768px) {
+    width: 690px;
+  }
+  @media (min-width: 1024px) {
+    padding: 0 15px;
+    width: 700px;
+  }
+`;
+/* eslint-enable */
 
 export default function Search({
   data,
@@ -23,10 +39,10 @@ export default function Search({
   total,
   page,
   perPage,
-  className,
+  hide,
 }) {
   return (
-    <main className={className}>
+    <SearchWrapper hide={hide}>
       <MainHeading total={total} />
       <SliderBlock
         fetchData={fetchData}
@@ -45,7 +61,7 @@ export default function Search({
         fetchData={fetchData}
       />
       <NoVehicles />
-    </main>
+    </SearchWrapper>
   );
 }
 
@@ -57,7 +73,7 @@ Search.propTypes = {
   total: number.isRequired,
   page: number.isRequired,
   perPage: number.isRequired,
-  className: string.isRequired,
+  hide: bool.isRequired,
 };
 
 Search.defaultProps = {

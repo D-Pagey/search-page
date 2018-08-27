@@ -1,24 +1,46 @@
 import React from 'react';
+import styled from 'styled-components';
 import { arrayOf, string } from 'prop-types';
 
-import './index.css';
 import titleCase from '../../../../../utils/capitalize';
+
+const FeaturesListWrapper = styled.div`
+  align-self: center;
+  margin-top: 3px;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const Features = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+`;
+
+const FeatureItem = styled.li`
+  color: #7d807c;
+  font-size: 12px;
+  padding-left: 5px;
+`;
 
 function Feature({ feature }) {
   const formatted = titleCase(feature.replace(/_/g, ' '));
 
   return (
-    <li className="feature">{formatted} •</li>
+    <FeatureItem>{formatted} •</FeatureItem>
   );
 }
 
 export default function FeaturesList({ features }) {
   return (
-    <div className="features-container">
-      <ul className="features-list">
+    <FeaturesListWrapper>
+      <Features>
         {features.map(element => <Feature feature={element} key={element} />)}
-      </ul>
-    </div>
+      </Features>
+    </FeaturesListWrapper>
   );
 }
 

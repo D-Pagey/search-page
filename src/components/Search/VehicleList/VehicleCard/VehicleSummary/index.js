@@ -1,7 +1,39 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { string } from 'prop-types';
 
-import './index.css';
+const VehicleSummaryWrapper = styled.div`
+  border-bottom: 1px solid #e4e4e4;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const VehicleDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 4px 16px;
+  width: 16rem;
+`;
+
+const VehicleTitle = styled.h3`
+  color: black;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+  margin: 0;
+`;
+
+const VehicleLocation = styled.p`
+  margin: 0;
+  padding: 2px 0;
+`;
+
+const VehicleAvailability = styled.p`
+  align-self: center;
+  margin: 0 10px;
+  text-align: center;
+  width: 7.5rem;
+`;
 
 export default class VehicleSummary extends Component {
   getDay = (date) => {
@@ -34,22 +66,17 @@ export default class VehicleSummary extends Component {
     } = this.props;
 
     return (
-      <div className="vehicle-summary">
-        <div className="vehicle-details">
-          <h3 className="vehicle-make">
-            {`${make} ${model} 
-            ${engine}`}
-          </h3>
-          <p className="vehicle-location">
-          Located in {postcode.slice(0, 3)}
-          </p>
-        </div>
-        <p className="vehicle-availability">
+      <VehicleSummaryWrapper>
+        <VehicleDetails>
+          <VehicleTitle>{`${make} ${model} ${engine}`}</VehicleTitle>
+          <VehicleLocation>Located in {postcode.slice(0, 3)}</VehicleLocation>
+        </VehicleDetails>
+        <VehicleAvailability>
           {`Available from ${this.getDay(available)} 
            ${this.getMonth(available)} 
            ${available.slice(0, 4)}`}
-        </p>
-      </div>
+        </VehicleAvailability>
+      </VehicleSummaryWrapper>
     );
   }
 }

@@ -120,7 +120,7 @@ export default class App extends Component {
         <Filter
           toggle={this.toggleRefineSearch}
           handleChange={this.handleChange}
-          className={isRefineSearch ? 'filter-container' : 'hide'}
+          hide={!isRefineSearch}
           vehicleType={query.vehicle_type}
           location={query.location}
           start={query.subscription_start_days}
@@ -142,7 +142,7 @@ export default class App extends Component {
           total={results.metadata ? results.metadata.total_count : 0}
           page={results.metadata ? results.metadata.page : 0}
           perPage={results.metadata ? results.metadata.per_page : 0}
-          className={isRefineSearch ? 'hide' : 'search-container'}
+          hide={isRefineSearch}
         />
         <RefineSearch>
           <Button onClick={this.toggleRefineSearch}>{buttonText}</Button>

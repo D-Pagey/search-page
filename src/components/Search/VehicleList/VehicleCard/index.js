@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   objectOf,
   any,
@@ -6,24 +7,45 @@ import {
   string,
 } from 'prop-types';
 
-import './index.css';
 import KeyFacts from './KeyFacts';
 import FeaturesList from './FeaturesList';
 import PriceWrapper from './PriceWrapper';
 import VehicleSummary from './VehicleSummary';
+
+const VehicleCardWrapper = styled.div`
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+`;
+
+const VehicleImage = styled.img.attrs({
+  alt: 'Car',
+})`
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  width: 100%;
+  @media (min-width: 1024px) {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 6px;
+    height: 270px;
+    width: 276px;
+  }
+`;
 
 export default function VehicleCard({ data, months, type }) {
   const price = data.price_discount_and_deposit_schedule_hash[months]
     .driver_price_pounds_after_discount_including_insurance;
 
   return (
-    <div className="vehicle-card">
-      <img
-        src={data.images[0].image_url}
-        alt="Car"
-        className="vehicle-img"
-      />
-      <div className="vehicle-copy">
+    <VehicleCardWrapper>
+      <VehicleImage src={data.images[0].image_url} />
+      <div>
         <VehicleSummary
           make={data.vehicle_make}
           model={data.vehicle_model}
@@ -44,7 +66,7 @@ export default function VehicleCard({ data, months, type }) {
         <FeaturesList features={data.features} />
         <PriceWrapper price={price} type={type} />
       </div>
-    </div>
+    </VehicleCardWrapper>
   );
 }
 
