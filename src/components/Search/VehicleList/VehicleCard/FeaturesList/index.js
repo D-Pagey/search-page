@@ -1,30 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import { arrayOf, string } from 'prop-types';
 
+import { FeaturesListWrapper, Features, FeatureItem } from './styles';
 import titleCase from '../../../../../utils/capitalize';
-
-const FeaturesListWrapper = styled.div`
-  align-self: center;
-  margin-top: 3px;
-  @media (min-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const Features = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0 10px;
-`;
-
-const FeatureItem = styled.li`
-  color: #7d807c;
-  font-size: 12px;
-  padding-left: 5px;
-`;
 
 function Feature({ feature }) {
   const formatted = titleCase(feature.replace(/_/g, ' '));

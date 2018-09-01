@@ -1,15 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const MainHeadingWrapper = styled.div`
-  padding: 15px 0;
-`;
-
-const MainHeadingTitle = styled.h2`
-  line-height: 1.1;
-  margin: 0;
-`;
+import { MainHeadingWrapper, MainHeadingTitle } from './styles';
 
 export default function MainHeading({ total }) {
   return (

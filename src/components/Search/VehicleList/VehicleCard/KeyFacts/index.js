@@ -1,21 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { number, string } from 'prop-types';
 
-const KeyFactsWrapper = styled.div`
-  border-bottom: 1px solid #e4e4e4;
-  display: flex;
-  justify-content: space-around;
-`;
-
-const KeyFactsList = styled.ul`
-  margin: 5px 10px 5px 0;
-  padding-left: 30px;
-`;
-
-const KeyFactsItem = styled.li`
-  text-transform: capitalize;
-`;
+import { KeyFactsWrapper, KeyFactsList, KeyFactsItem } from './styles';
 
 export default function KeyFacts({
   year,

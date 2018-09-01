@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   objectOf,
   arrayOf,
@@ -9,27 +8,13 @@ import {
   number,
 } from 'prop-types';
 
+import { SearchWrapper } from './styles';
+
 import MainHeading from './MainHeading';
 import SliderBlock from './SliderBlock';
 import VehicleList from './VehicleList';
 import Pagination from './Pagination';
 import NoVehicles from './NoVehicles';
-
-/* eslint-disable */
-const SearchWrapper = styled.main`
-  align-items: center;
-  display: ${props => props.hide ? 'none' : 'flex'};
-  flex-direction: column;
-  padding: 0 15px;
-  @media (min-width: 768px) {
-    width: 690px;
-  }
-  @media (min-width: 1024px) {
-    padding: 0 15px;
-    width: 700px;
-  }
-`;
-/* eslint-enable */
 
 export default function Search({
   data,

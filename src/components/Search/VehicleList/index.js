@@ -1,22 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import { arrayOf, any, string } from 'prop-types';
 
+import { VehicleListWrapper } from './styles';
 import VehicleCard from './VehicleCard';
-
-const VehicleListWrapper = styled.div`
-  margin: 15px 0;
-  width: 290px;
-  @media (min-width: 375px) {
-    width: 340px;
-  }
-  @media (min-width: 425px) {
-    width: 390px;
-  }
-  @media (min-width: 768px) {
-    width: 100%;
-  }
-`;
 
 export default function VehicleList({ data, type }) {
   let content;
