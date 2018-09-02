@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import { toggleRefineSearch } from '../../redux/redux';
 import { AppWrapper, RefineSearch } from './styles';
 import Navbar from '../Navbar';
 import Banner from '../Banner';
@@ -9,9 +11,8 @@ import Filter from '../Filter';
 
 const URL = 'https://app.joindrover.com/api/web/vehicles';
 
-export default class App extends Component {
+class App extends Component {
   state = {
-    isRefineSearch: false,
     results: {},
     query: {
       body_type: undefined,
@@ -39,16 +40,15 @@ export default class App extends Component {
     this.fetchData(query);
   }
 
-  toggleRefineSearch = () => {
-    const { query, isRefineSearch } = this.state;
+  toggle = () => {
+    const { query } = this.state;
+    const { toggleRefineSearch, isRefineSearch } = this.props;
 
     if (isRefineSearch) {
       this.fetchData(query);
     }
 
-    this.setState(prevState => ({
-      isRefineSearch: !prevState.isRefineSearch,
-    }));
+    toggleRefineSearch(!isRefineSearch);
   }
 
   fetchData = () => {
@@ -80,7 +80,8 @@ export default class App extends Component {
   }
 
   render() {
-    const { isRefineSearch, query, results } = this.state;
+    const { query, results } = this.state;
+    const { isRefineSearch } = this.props;
     const buttonText = isRefineSearch ? 'Update search and hide filter'
       : 'Refine your search';
 
@@ -89,7 +90,7 @@ export default class App extends Component {
         <Navbar />
         <Banner />
         <Filter
-          toggle={this.toggleRefineSearch}
+          toggle={this.toggle}
           handleChange={this.handleChange}
           hide={!isRefineSearch}
           vehicleType={query.vehicle_type}
@@ -116,9 +117,23 @@ export default class App extends Component {
           hide={isRefineSearch}
         />
         <RefineSearch>
-          <Button onClick={this.toggleRefineSearch}>{buttonText}</Button>
+          <Button onClick={this.toggle}>{buttonText}</Button>
         </RefineSearch>
       </AppWrapper>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { ...state };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleRefineSearch: (boolean) => {
+      dispatch(toggleRefineSearch(boolean));
+    },
+  };
+};
+
+export const Container = connect(mapStateToProps, mapDispatchToProps)(App);
