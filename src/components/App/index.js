@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { toggleRefineSearch } from '../../redux/redux';
 import { AppWrapper, RefineSearch } from './styles';
 import Navbar from '../Navbar';
 import Banner from '../Banner';
@@ -11,48 +10,33 @@ import Filter from '../Filter';
 
 const URL = 'https://app.joindrover.com/api/web/vehicles';
 
-class App extends Component {
+export class App extends Component {
   state = {
+    isRefineSearch: false,
     results: {},
-    query: {
-      body_type: undefined,
-      fuel: undefined,
-      location: 'London',
-      max_distance: 9999,
-      number_of_months: 12,
-      number_of_seats_min: undefined,
-      number_of_weeks: 12,
-      page: 1,
-      price_max: 2500,
-      rental_option: 'commitment',
-      subscription_start_days: 30,
-      sub_type: undefined,
-      transmission: undefined,
-      vehicle_make: undefined,
-      vehicle_type: 'Consumer',
-      year: undefined,
-    },
   }
 
   componentDidMount = () => {
-    const { query } = this.state;
+    const { query } = this.props;
 
     this.fetchData(query);
   }
 
   toggle = () => {
-    const { query } = this.state;
-    const { toggleRefineSearch, isRefineSearch } = this.props;
+    const { isRefineSearch } = this.state;
+    const { query } = this.props;
 
     if (isRefineSearch) {
       this.fetchData(query);
     }
 
-    toggleRefineSearch(!isRefineSearch);
+    this.setState(prevState => ({
+      isRefineSearch: !prevState.isRefineSearch,
+    }));
   }
 
   fetchData = () => {
-    const { query } = this.state;
+    const { query } = this.props;
     // eslint-disable-next-line no-undef
     fetch(URL, {
       method: 'POST',
@@ -62,13 +46,13 @@ class App extends Component {
       },
     })
       .then(response => response.json())
-      .then(data => this.setState({
+      .then(data => this.setState({ //dispatch to props here? 
         results: data,
       }));
   }
 
   handleChange = (event, callback) => {
-    const { query } = this.state;
+    const { query } = this.props;
     const { name, value } = event.target;
 
     this.setState({
@@ -80,8 +64,9 @@ class App extends Component {
   }
 
   render() {
-    const { query, results } = this.state;
-    const { isRefineSearch } = this.props;
+    const { results, isRefineSearch } = this.state;
+    const { query } = this.props;
+
     const buttonText = isRefineSearch ? 'Update search and hide filter'
       : 'Refine your search';
 
@@ -125,15 +110,13 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { ...state };
+  return { query: state.query };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleRefineSearch: (boolean) => {
-      dispatch(toggleRefineSearch(boolean));
-    },
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     test: 12,
+//   }
+// }
 
-export const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+export const Container = connect(mapStateToProps)(App);
