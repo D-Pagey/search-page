@@ -46,7 +46,7 @@ export class App extends Component {
       },
     })
       .then(response => response.json())
-      .then(data => this.setState({ //dispatch to props here? 
+      .then(data => this.setState({ // dispatch to props here?
         results: data,
       }));
   }
@@ -109,9 +109,7 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { query: state.query };
-};
+const mapStateToProps = ({ query }) => ({ query });
 
 // const mapDispatchToProps = dispatch => {
 //   return {
@@ -120,3 +118,5 @@ const mapStateToProps = (state) => {
 // }
 
 export const Container = connect(mapStateToProps)(App);
+
+// SQUASH COMMIT LATER

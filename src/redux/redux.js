@@ -4,11 +4,11 @@ const SPECIFIC_SEARCH = 'SPECIFIC_SEARCH';
  * ACTION CREATORS
  */
 export const queryParams = (params) => {
-  return { 
+  return {
     type: SPECIFIC_SEARCH,
     payload: params,
-  }
-}
+  };
+};
 
 /**
  * Reducer
@@ -33,24 +33,15 @@ const initialState = {
     year: undefined,
   },
 };
+// DO I NEED THE FIELDS IF UNDEFINED?
 
 export const queryParamsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SPECIFIC_SEARCH:
       return Object.assign({}, state, {
-        query: action.payload
-      })
+        query: action.payload,
+      });
     default:
       return state;
   }
 };
-
-export const mapStateToProps = (state) => {
-  return { query: state.query };
-};
-
-export const mapDispatchToProps = dispatch => {
-  return {
-    test: 12,
-  }
-}
